@@ -331,16 +331,11 @@ checkin.addEventListener("change",calculate);
 checkout.addEventListener("change",calculate);
 
 
-function sendBooking(){
+async function sendBooking(){
 
-let name =
-document.getElementById("name").value;
-
-let phone =
-document.getElementById("phone").value;
-
-let email =
-document.getElementById("email").value;
+const name = document.getElementById("name").value;
+const phone = document.getElementById("phone").value;
+const email = document.getElementById("email").value;
 
 if(!name || !phone || !email){
 
@@ -350,13 +345,64 @@ return;
 
 }
 
+const booking = {
+
+name: name,
+phone: phone,
+email: email,
+destination: destination.value,
+hotel: hotel.value,
+room: room.value,
+rooms: rooms.value,
+checkin: checkin.value,
+checkout: checkout.value,
+total: total.innerText
+
+};
+
+try {
+
+const response = await fetch(
+"https://al-fakhama-booking.alfakhama-travel-uzb.workers.dev/",
+{
+
+method: "POST",
+
+headers: {
+"Content-Type": "application/json"
+},
+
+body: JSON.stringify(booking)
+
+}
+);
+
+if(response.ok){
+
 alert(
-"Thank you "+name+
-"! Your booking request has been received."
+"Thank you " +
+name +
+"! Your booking has been sent successfully."
+);
+
+}else{
+
+alert(
+"Sorry, booking could not be sent."
 );
 
 }
 
+} catch(error){
+
+alert(
+"Connection error. Please try again."
+);
+
+}
+
+}
+  
 </script>
 
 </body>
