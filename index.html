@@ -3,123 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Al Fakhama Travel</title>
 
 <style>
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f6f2ea;
-    color: #29251f;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f6f2ea;
+color:#29251f;
 }
 
 header {
-    background: #29251f;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+background:#29251f;
+color:white;
+text-align:center;
+padding:40px 20px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 30px;
+margin:0;
+font-size:30px;
 }
 
 .container {
-    max-width: 650px;
-    margin: 30px auto;
-    padding: 20px;
+max-width:650px;
+margin:30px auto;
+padding:20px;
 }
 
 .booking {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
+background:white;
+padding:25px;
+border-radius:15px;
 }
 
 label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
+display:block;
+margin-top:15px;
+font-weight:bold;
 }
 
-select, input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+input,select {
+width:100%;
+padding:12px;
+margin-top:6px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
 }
 
 .total {
-    margin-top: 25px;
-    padding: 20px;
-    background: #f1ede5;
-    text-align: center;
-    border-radius: 10px;
+margin-top:25px;
+padding:20px;
+background:#f1ede5;
+text-align:center;
+border-radius:10px;
 }
 
 button {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    background: #29251f;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
+width:100%;
+padding:15px;
+margin-top:20px;
+background:#29251f;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <h1>AL FAKHAMA TRAVEL</h1>
+
 <p>Premium Hotel Booking — Madinah & Makkah</p>
+
 </header>
 
 <div class="container">
+
 <div class="booking">
 
 <h2>Hotel Booking</h2>
 
+<label>Full Name</label>
+
+<input type="text" id="name" placeholder="Enter your full name">
+
+<label>Phone Number</label>
+
+<input type="tel" id="phone" placeholder="Enter your phone number">
+
+<label>Email</label>
+
+<input type="email" id="email" placeholder="Enter your email">
+
 <label>Destination</label>
+
 <select id="destination">
+
 <option value="">Select Destination</option>
+
 <option value="Madinah">Madinah</option>
+
 <option value="Makkah">Makkah</option>
+
 </select>
 
 <label>Hotel</label>
+
 <select id="hotel">
+
 <option value="">Select Hotel</option>
+
 </select>
 
 <label>Room Type</label>
+
 <select id="room">
+
 <option value="Double">Double Room</option>
+
 <option value="Triple">Triple Room</option>
+
 <option value="Quad">Quad Room</option>
+
 </select>
 
 <label>Number of Rooms</label>
+
 <input type="number" id="rooms" value="1" min="1">
 
 <label>Check-in</label>
+
 <input type="date" id="checkin">
 
 <label>Check-out</label>
+
 <input type="date" id="checkout">
 
 <div class="total">
+
 Total Price
+
 <h2 id="total">0 SAR</h2>
-</div>
-
-<button onclick="sendBooking()">REQUEST BOOKING</button>
 
 </div>
+
+<button onclick="sendBooking()">
+
+REQUEST BOOKING
+
+</button>
+
+</div>
+
 </div>
 
 <script>
@@ -127,69 +172,91 @@ Total Price
 const hotels = {
 
 Madinah: {
+
 "Maien Taiba Hotel": {
-Double: 500,
-Triple: 560,
-Quad: 620
+Double:500,
+Triple:560,
+Quad:620
 },
 
 "Valy Al Madinah Hotel": {
-Double: 490,
-Triple: 550,
-Quad: 610
+Double:490,
+Triple:550,
+Quad:610
 },
 
 "View Al Madinah Hotel": {
-Double: 520,
-Triple: 580,
-Quad: 640
+Double:520,
+Triple:580,
+Quad:640
 },
 
 "GEWAR AL ANDALUS": {
-Double: 500,
-Triple: 550,
-Quad: 600
+Double:500,
+Triple:550,
+Quad:600
 }
+
 },
 
 Makkah: {
+
 "Anjum Hotel Makkah": {
-Double: 580,
-Triple: 680,
-Quad: 780
+Double:580,
+Triple:680,
+Quad:780
 },
 
 "Movinpik Makkah": {
-Double: 650,
-Triple: 775,
-Quad: 900
+Double:650,
+Triple:775,
+Quad:900
 }
+
 }
 
 };
 
-const destination = document.getElementById("destination");
-const hotel = document.getElementById("hotel");
-const room = document.getElementById("room");
-const rooms = document.getElementById("rooms");
-const checkin = document.getElementById("checkin");
-const checkout = document.getElementById("checkout");
-const total = document.getElementById("total");
+const destination =
+document.getElementById("destination");
 
-destination.addEventListener("change", function() {
+const hotel =
+document.getElementById("hotel");
 
-hotel.innerHTML = '<option value="">Select Hotel</option>';
+const room =
+document.getElementById("room");
 
-const selected = destination.value;
+const rooms =
+document.getElementById("rooms");
 
-if (hotels[selected]) {
+const checkin =
+document.getElementById("checkin");
 
-Object.keys(hotels[selected]).forEach(function(name) {
+const checkout =
+document.getElementById("checkout");
 
-const option = document.createElement("option");
+const total =
+document.getElementById("total");
 
-option.value = name;
-option.textContent = name;
+
+destination.addEventListener("change",function(){
+
+hotel.innerHTML =
+'<option value="">Select Hotel</option>';
+
+let selected =
+destination.value;
+
+if(hotels[selected]){
+
+Object.keys(hotels[selected]).forEach(function(name){
+
+let option =
+document.createElement("option");
+
+option.value=name;
+
+option.textContent=name;
 
 hotel.appendChild(option);
 
@@ -201,52 +268,97 @@ calculate();
 
 });
 
-function calculate() {
 
-const d = destination.value;
-const h = hotel.value;
-const r = room.value;
+function calculate(){
 
-const roomCount = parseInt(rooms.value) || 1;
+let d =
+destination.value;
 
-let nights = 0;
+let h =
+hotel.value;
 
-if (checkin.value && checkout.value) {
+let r =
+room.value;
 
-const start = new Date(checkin.value);
-const end = new Date(checkout.value);
+let roomCount =
+parseInt(rooms.value)||1;
 
-nights = Math.round((end - start) / 86400000);
+let nights=0;
 
-}
+if(checkin.value && checkout.value){
 
-let price = 0;
+let start =
+new Date(checkin.value);
 
-if (hotels[d] && hotels[d][h] && hotels[d][h][r]) {
+let end =
+new Date(checkout.value);
 
-price = hotels[d][h][r];
-
-}
-
-const finalTotal = price * roomCount * nights;
-
-total.innerText = finalTotal.toLocaleString() + " SAR";
+nights =
+Math.round((end-start)/86400000);
 
 }
 
-hotel.addEventListener("change", calculate);
-room.addEventListener("change", calculate);
-rooms.addEventListener("input", calculate);
-checkin.addEventListener("change", calculate);
-checkout.addEventListener("change", calculate);
+let price=0;
 
-function sendBooking() {
+if(
+hotels[d] &&
+hotels[d][h] &&
+hotels[d][h][r]
+){
 
-alert("Booking request: " + total.innerText);
+price =
+hotels[d][h][r];
+
+}
+
+let finalTotal =
+price*roomCount*nights;
+
+total.innerText =
+finalTotal.toLocaleString()+" SAR";
+
+}
+
+
+hotel.addEventListener("change",calculate);
+
+room.addEventListener("change",calculate);
+
+rooms.addEventListener("input",calculate);
+
+checkin.addEventListener("change",calculate);
+
+checkout.addEventListener("change",calculate);
+
+
+function sendBooking(){
+
+let name =
+document.getElementById("name").value;
+
+let phone =
+document.getElementById("phone").value;
+
+let email =
+document.getElementById("email").value;
+
+if(!name || !phone || !email){
+
+alert("Please fill in your name, phone number and email.");
+
+return;
+
+}
+
+alert(
+"Thank you "+name+
+"! Your booking request has been received."
+);
 
 }
 
 </script>
 
 </body>
+
 </html>
