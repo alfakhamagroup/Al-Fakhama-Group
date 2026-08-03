@@ -3,309 +3,1252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Al Fakhama Travel</title>
+
+<title>Al Fakhama Travel | Luxury Hotel Booking</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f6f1e8;color:#2b251d}
-header{background:linear-gradient(135deg,#211b15,#59462d);color:#fff;padding:22px}
-.nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:bold;letter-spacing:2px}
-button{border:0;border-radius:10px;padding:13px 18px;cursor:pointer;font-weight:bold}
-.adminBtn{background:#c6a15c;color:#fff}
-.hero{text-align:center;color:#fff;padding:70px 20px;background:linear-gradient(rgba(35,27,18,.75),rgba(35,27,18,.75)),linear-gradient(135deg,#b59660,#dfcba3)}
-.hero h1{font-size:42px;margin:0 0 12px}
-.container{max-width:1100px;margin:35px auto;padding:0 18px}
-.card{background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 35px rgba(0,0,0,.08);margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.full{grid-column:1/-1}
-label{display:block;font-weight:bold;font-size:14px;margin-bottom:7px}
-input,select,textarea{width:100%;padding:14px;border:1px solid #ded3c2;border-radius:10px;background:#fffdf9;font-size:15px}
-textarea{min-height:100px}
-.primary{width:100%;margin-top:20px;background:linear-gradient(135deg,#b48c4e,#d6b675);color:#fff;font-size:16px}
-.priceBox{margin-top:25px;padding:25px;text-align:center;background:#f7efe0;border:1px solid #dfc99e;border-radius:15px}
-.price{font-size:35px;color:#9a7133;font-weight:bold;margin:8px}
-.breakdown{font-size:14px;color:#665844;line-height:1.7}
-.success{display:none;margin-top:20px;padding:18px;background:#e8f6eb;color:#286a35;border-radius:10px;text-align:center}
-.admin{display:none}
-.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-.tabs button{background:#eee4d4;color:#5a4527}
-.tabs button.active{background:#b48c4e;color:white}
-.panel{display:none}
-.panel.active{display:block}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}
-.stat{padding:20px;background:#faf5ec;border-radius:12px;text-align:center}
-.stat strong{display:block;font-size:28px;color:#9b7439}
-.item{border:1px solid #e3d9ca;padding:18px;border-radius:13px;margin:12px 0;background:#fffdf9}
-.itemHead{display:flex;justify-content:space-between;gap:10px}
-.badge{padding:7px 12px;border-radius:20px;font-size:12px;font-weight:bold}
-.new{background:#e5efff;color:#285ca8}
-.confirmed{background:#e2f5e6;color:#28723a}
-.cancelled{background:#ffe5e5;color:#a12a2a}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
-.confirm{background:#dff1e3;color:#286b37}
-.cancel{background:#ffe2e2;color:#a12828}
-.delete{background:#29231c;color:#fff}
-.addBox{background:#faf5ec;padding:20px;border-radius:12px;margin-bottom:20px}
-.smallGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.hidden{display:none!important}
-footer{background:#211b15;color:#fff;text-align:center;padding:30px;margin-top:50px}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f8f3ea;
+color:#30281e;
+}
+
+header{
+background:#fffaf2;
+border-bottom:1px solid #eadcc6;
+padding:18px 20px;
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:23px;
+font-weight:bold;
+letter-spacing:2px;
+color:#9a7133;
+}
+
+.support{
+text-align:right;
+font-size:13px;
+color:#665844;
+}
+
+.support a{
+color:#9a7133;
+font-weight:bold;
+text-decoration:none;
+}
+
+.hero{
+min-height:520px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:80px 20px;
+
+background:
+linear-gradient(
+rgba(35,27,18,.58),
+rgba(35,27,18,.72)
+),
+url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1800&q=85");
+
+background-size:cover;
+background-position:center;
+}
+
+.heroBox{
+max-width:850px;
+}
+
+.hero h1{
+font-size:52px;
+margin:0 0 15px;
+letter-spacing:1px;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.7;
+}
+
+.goldLine{
+width:90px;
+height:3px;
+background:#d6b675;
+margin:25px auto;
+}
+
+.container{
+max-width:1100px;
+margin:45px auto;
+padding:0 18px;
+}
+
+.card{
+background:white;
+padding:32px;
+border-radius:22px;
+box-shadow:0 12px 40px rgba(70,50,20,.08);
+margin-bottom:30px;
+}
+
+.card h2{
+color:#8d682f;
+margin-top:0;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+label{
+display:block;
+font-weight:bold;
+font-size:14px;
+margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px;
+border:1px solid #dfd2bd;
+border-radius:10px;
+background:#fffdf9;
+font-size:15px;
+outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#b48c4e;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.primary{
+width:100%;
+margin-top:20px;
+padding:16px;
+border:0;
+border-radius:12px;
+background:linear-gradient(
+135deg,
+#b48c4e,
+#d8bb7b
+);
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.primary:hover{
+opacity:.9;
+}
+
+.priceBox{
+margin-top:25px;
+padding:25px;
+text-align:center;
+background:#faf3e5;
+border:1px solid #dfc99e;
+border-radius:16px;
+}
+
+.price{
+font-size:38px;
+color:#987033;
+font-weight:bold;
+margin:10px;
+}
+
+.breakdown{
+font-size:14px;
+color:#665844;
+line-height:1.8;
+}
+
+.success{
+display:none;
+margin-top:20px;
+padding:18px;
+background:#e8f6eb;
+color:#286a35;
+border-radius:10px;
+text-align:center;
+}
+
+.hidden{
+display:none!important;
+}
+
+.contactSection{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+}
+
+.contactCard{
+background:white;
+border-radius:16px;
+padding:25px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.contactCard a{
+text-decoration:none;
+color:#987033;
+font-weight:bold;
+}
+
+.contactIcon{
+font-size:30px;
+margin-bottom:10px;
+}
+
+footer{
+background:#241d16;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:50px;
+}
+
+.footerLogo{
+font-size:23px;
+font-weight:bold;
+letter-spacing:2px;
+color:#d6b675;
+}
+
+.footerLinks{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.footerLinks a{
+color:#fff;
+text-decoration:none;
+}
+
+.adminPage{
+display:none;
+}
+
+.adminHeader{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.tabs button{
+background:#eee4d4;
+color:#5a4527;
+border:0;
+border-radius:10px;
+padding:12px 18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tabs button.active{
+background:#b48c4e;
+color:white;
+}
+
+.panel{
+display:none;
+}
+
+.panel.active{
+display:block;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:20px;
+}
+
+.stat{
+padding:20px;
+background:#faf5ec;
+border-radius:12px;
+text-align:center;
+}
+
+.stat strong{
+display:block;
+font-size:28px;
+color:#9b7439;
+}
+
+.item{
+border:1px solid #e3d9ca;
+padding:18px;
+border-radius:13px;
+margin:12px 0;
+background:#fffdf9;
+}
+
+.itemHead{
+display:flex;
+justify-content:space-between;
+gap:10px;
+}
+
+.badge{
+padding:7px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+.new{
+background:#e5efff;
+color:#285ca8;
+}
+
+.confirmed{
+background:#e2f5e6;
+color:#28723a;
+}
+
+.cancelled{
+background:#ffe5e5;
+color:#a12a2a;
+}
+
+.actions{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.actions button{
+border:0;
+border-radius:8px;
+padding:10px 14px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.confirm{
+background:#dff1e3;
+color:#286b37;
+}
+
+.cancel{
+background:#ffe2e2;
+color:#a12828;
+}
+
+.delete{
+background:#29231c;
+color:white;
+}
+
+.addBox{
+background:#faf5ec;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.smallGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+.backBtn{
+background:#29231c;
+color:white;
+}
+
+.logoutBtn{
+background:#eee4d4;
+color:#5a4527;
+}
 
 @media(max-width:700px){
-.nav{flex-direction:column;gap:15px}
-.hero h1{font-size:30px}
-.grid,.smallGrid{grid-template-columns:1fr}
-.full{grid-column:auto}
-.stats{grid-template-columns:repeat(2,1fr)}
-.card{padding:20px}
-.itemHead{flex-direction:column}
+
+.nav{
+flex-direction:column;
+gap:12px;
+text-align:center;
 }
+
+.support{
+text-align:center;
+}
+
+.hero{
+min-height:420px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.grid,
+.smallGrid,
+.contactSection{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:auto;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.card{
+padding:20px;
+}
+
+.itemHead{
+flex-direction:column;
+}
+
+.adminHeader{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+PUBLIC WEBSITE
+========================= -->
+
+<div id="publicPage">
+
 <header>
+
 <div class="nav">
-<div class="logo">AL FAKHAMA TRAVEL</div>
-<button class="adminBtn" onclick="openAdmin()">ADMIN PANEL</button>
+
+<div class="logo">
+AL FAKHAMA TRAVEL
 </div>
+
+<div class="support">
+
+24/7 Customer Support<br>
+
+<a href="tel:+966547567617">
++966 54 756 7617
+</a>
+
+</div>
+
+</div>
+
 </header>
 
+
 <section class="hero">
-<h1>Luxury Hotel Booking</h1>
-<p>Premium Hotels & Travel Services — Madinah & Makkah</p>
+
+<div class="heroBox">
+
+<h1>
+Luxury Hotel Booking
+</h1>
+
+<div class="goldLine"></div>
+
+<p>
+Premium Hotels & Luxury Travel Services
+</p>
+
+<p>
+Madinah • Makkah • Saudi Arabia
+</p>
+
+</div>
+
 </section>
+
 
 <div class="container">
 
-<div id="bookingPage">
-
 <div class="card">
 
-<h2>Hotel Booking</h2>
-<p>Complete your booking request and our team will contact you.</p>
+<h2>
+Hotel Booking
+</h2>
+
+<p>
+Complete your booking request and our team will contact you shortly.
+</p>
+
 
 <div class="grid">
 
-<div>
-<label>Full Name *</label>
-<input id="name" placeholder="Full name">
-</div>
 
 <div>
-<label>Passport Number *</label>
-<input id="passport" placeholder="Passport number">
+
+<label>
+Full Name *
+</label>
+
+<input
+id="name"
+placeholder="Full name"
+>
+
 </div>
 
-<div>
-<label>WhatsApp / Phone *</label>
-<input id="phone" placeholder="+966 5XXXXXXXX">
-</div>
 
 <div>
-<label>Email *</label>
-<input id="email" type="email" placeholder="Email address">
+
+<label>
+Passport Number *
+</label>
+
+<input
+id="passport"
+placeholder="Passport number"
+>
+
 </div>
 
-<div>
-<label>Nationality</label>
-<input id="nationality" placeholder="Uzbekistan">
-</div>
 
 <div>
-<label>Destination *</label>
+
+<label>
+WhatsApp / Phone *
+</label>
+
+<input
+id="phone"
+placeholder="+966 5XXXXXXXX"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Email *
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="Email address"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Nationality
+</label>
+
+<input
+id="nationality"
+placeholder="Uzbekistan"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Destination *
+</label>
+
 <select id="destination">
-<option value="">Select Destination</option>
-<option value="Madinah">Madinah</option>
-<option value="Makkah">Makkah</option>
+
+<option value="">
+Select Destination
+</option>
+
+<option value="Madinah">
+Madinah
+</option>
+
+<option value="Makkah">
+Makkah
+</option>
+
 </select>
+
 </div>
 
+
 <div>
-<label>Hotel *</label>
+
+<label>
+Hotel *
+</label>
+
 <select id="hotel">
-<option value="">Select Hotel</option>
+
+<option value="">
+Select Hotel
+</option>
+
 </select>
+
 </div>
 
+
 <div>
-<label>Room Type *</label>
+
+<label>
+Room Type *
+</label>
+
 <select id="room">
-<option value="Double">Double Room</option>
-<option value="Triple">Triple Room</option>
-<option value="Quad">Quad Room</option>
+
+<option value="Double">
+Double Room
+</option>
+
+<option value="Triple">
+Triple Room
+</option>
+
+<option value="Quad">
+Quad Room
+</option>
+
 </select>
+
 </div>
 
-<div>
-<label>Number of Rooms</label>
-<input id="rooms" type="number" min="1" value="1">
-</div>
 
 <div>
-<label>Adults</label>
-<input id="adults" type="number" min="1" value="2">
+
+<label>
+Number of Rooms
+</label>
+
+<input
+id="rooms"
+type="number"
+min="1"
+value="1"
+>
+
 </div>
 
-<div>
-<label>Children</label>
-<input id="children" type="number" min="0" value="0">
-</div>
 
 <div>
-<label>Check-in *</label>
-<input id="checkin" type="date">
+
+<label>
+Adults
+</label>
+
+<input
+id="adults"
+type="number"
+min="1"
+value="2"
+>
+
 </div>
 
-<div>
-<label>Check-out *</label>
-<input id="checkout" type="date">
-</div>
 
 <div>
-<label>Meal Plan</label>
+
+<label>
+Children
+</label>
+
+<input
+id="children"
+type="number"
+min="0"
+value="0"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Check-in *
+</label>
+
+<input
+id="checkin"
+type="date"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Check-out *
+</label>
+
+<input
+id="checkout"
+type="date"
+>
+
+</div>
+
+
+<div>
+
+<label>
+Meal Plan
+</label>
+
 <select id="meal">
-<option>Breakfast Included</option>
+
+<option>
+Breakfast Included
+</option>
+
 </select>
+
 </div>
+
 
 <div>
-<label>Transfer Route</label>
+
+<label>
+Transfer Route
+</label>
+
 <select id="transferRoute">
-<option value="">No Transfer</option>
+
+<option value="">
+No Transfer
+</option>
+
 </select>
+
 </div>
 
-<div id="vehicleBox" class="hidden">
-<label>Vehicle</label>
+
+<div
+id="vehicleBox"
+class="hidden"
+>
+
+<label>
+Vehicle
+</label>
+
 <select id="vehicle">
-<option value="">Select Vehicle</option>
+
+<option value="">
+Select Vehicle
+</option>
+
 </select>
+
 </div>
+
 
 <div class="full">
-<label>Special Requests</label>
-<textarea id="requests" placeholder="Any special requests..."></textarea>
+
+<label>
+Special Requests
+</label>
+
+<textarea
+id="requests"
+placeholder="Any special requests..."
+></textarea>
+
 </div>
 
 </div>
+
 
 <div class="priceBox">
-<div>ESTIMATED TOTAL</div>
-<div class="price" id="total">0 SAR</div>
-<div class="breakdown" id="breakdown">
-Select destination, hotel and dates
-</div>
+
+<div>
+ESTIMATED TOTAL
 </div>
 
-<button class="primary" onclick="sendBooking()">
+<div
+class="price"
+id="total"
+>
+0 SAR
+</div>
+
+<div
+class="breakdown"
+id="breakdown"
+>
+Select destination, hotel and dates
+</div>
+
+</div>
+
+
+<button
+class="primary"
+onclick="sendBooking()"
+>
 REQUEST BOOKING
 </button>
 
-<div id="success" class="success">
+
+<div
+id="success"
+class="success"
+>
+
 ✓ Booking request sent successfully.
-<br>Our team will contact you shortly.
+
+<br>
+
+Our team will contact you shortly.
+
 </div>
 
 </div>
+
+
+<div class="contactSection">
+
+
+<div class="contactCard">
+
+<div class="contactIcon">
+📞
+</div>
+
+<strong>
+24/7 Support
+</strong>
+
+<br><br>
+
+<a href="tel:+966547567617">
++966 54 756 7617
+</a>
+
 </div>
 
 
-<div id="adminPage" class="admin">
+<div class="contactCard">
+
+<div class="contactIcon">
+📸
+</div>
+
+<strong>
+Instagram
+</strong>
+
+<br><br>
+
+<a
+href="https://www.instagram.com/alfakhama_group"
+target="_blank"
+>
+@alfakhama_group
+</a>
+
+</div>
+
+
+<div class="contactCard">
+
+<div class="contactIcon">
+💬
+</div>
+
+<strong>
+Telegram Contact
+</strong>
+
+<br><br>
+
+<a
+href="https://t.me/alfakhama_madinah"
+target="_blank"
+>
+@alfakhama_madinah
+</a>
+
+</div>
+
+
+<div class="contactCard">
+
+<div class="contactIcon">
+📢
+</div>
+
+<strong>
+Telegram Channel
+</strong>
+
+<br><br>
+
+<a
+href="https://t.me/alfakhama_group"
+target="_blank"
+>
+@alfakhama_group
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<div class="footerLogo">
+AL FAKHAMA TRAVEL
+</div>
+
+<p>
+Premium Hotel Booking & Luxury Travel Services
+</p>
+
+<p>
+Madinah, Saudi Arabia
+</p>
+
+<div class="footerLinks">
+
+<a href="tel:+966547567617">
+📞 +966 54 756 7617
+</a>
+
+<a
+href="https://www.instagram.com/alfakhama_group"
+target="_blank"
+>
+Instagram
+</a>
+
+<a
+href="https://t.me/alfakhama_madinah"
+target="_blank"
+>
+Telegram
+</a>
+
+<a
+href="https://t.me/alfakhama_group"
+target="_blank"
+>
+Channel
+</a>
+
+</div>
+
+</footer>
+
+</div>
+
+
+<!-- =========================
+ADMIN PAGE
+========================= -->
+
+<div
+id="adminPage"
+class="adminPage"
+>
+
+<div class="container">
 
 <div class="card">
 
-<h2>Al Fakhama Admin Dashboard</h2>
+<div class="adminHeader">
+
+<h2>
+Al Fakhama Admin Dashboard
+</h2>
+
+<button
+class="logoutBtn"
+onclick="logoutAdmin()"
+>
+EXIT ADMIN
+</button>
+
+</div>
+
 
 <div class="stats">
-<div class="stat"><strong id="statAll">0</strong>Total</div>
-<div class="stat"><strong id="statNew">0</strong>New</div>
-<div class="stat"><strong id="statConfirmed">0</strong>Confirmed</div>
-<div class="stat"><strong id="statCancelled">0</strong>Cancelled</div>
+
+<div class="stat">
+<strong id="statAll">0</strong>
+Total
 </div>
+
+<div class="stat">
+<strong id="statNew">0</strong>
+New
+</div>
+
+<div class="stat">
+<strong id="statConfirmed">0</strong>
+Confirmed
+</div>
+
+<div class="stat">
+<strong id="statCancelled">0</strong>
+Cancelled
+</div>
+
+</div>
+
 
 <div class="tabs">
 
-<button class="active" onclick="tab('bookings',this)">BOOKINGS</button>
+<button
+class="active"
+onclick="tab('bookings',this)"
+>
+BOOKINGS
+</button>
 
-<button onclick="tab('hotels',this)">HOTELS</button>
+<button
+onclick="tab('hotels',this)"
+>
+HOTELS
+</button>
 
-<button onclick="tab('transfers',this)">TRANSFERS</button>
+<button
+onclick="tab('transfers',this)"
+>
+TRANSFERS
+</button>
 
-<button onclick="closeAdmin()">BACK</button>
+<button
+onclick="tab('vehicles',this)"
+>
+VEHICLES
+</button>
+
+<button
+class="backBtn"
+onclick="logoutAdmin()"
+>
+BACK TO WEBSITE
+</button>
 
 </div>
 
 
-<div id="bookings" class="panel active">
+<!-- BOOKINGS -->
 
-<input id="search" placeholder="Search booking..." oninput="renderBookings()">
+<div
+id="bookings"
+class="panel active"
+>
+
+<input
+id="search"
+placeholder="Search booking..."
+oninput="renderBookings()"
+>
 
 <div id="bookingList"></div>
 
 </div>
 
 
-<div id="hotels" class="panel">
+<!-- HOTELS -->
+
+<div
+id="hotels"
+class="panel"
+>
 
 <div class="addBox">
 
-<h3>Add / Update Hotel</h3>
+<h3>
+Add / Update Hotel
+</h3>
 
 <div class="smallGrid">
 
-<input id="newHotelName" placeholder="Hotel Name">
+<input
+id="newHotelName"
+placeholder="Hotel Name"
+>
 
-<select id="newHotelDestination">
-<option value="Madinah">Madinah</option>
-<option value="Makkah">Makkah</option>
+<select
+id="newHotelDestination"
+>
+
+<option value="Madinah">
+Madinah
+</option>
+
+<option value="Makkah">
+Makkah
+</option>
+
 </select>
 
-<input id="newDouble" type="number" placeholder="Double SAR">
+<input
+id="newDouble"
+type="number"
+placeholder="Double SAR"
+>
 
-<input id="newTriple" type="number" placeholder="Triple SAR">
+<input
+id="newTriple"
+type="number"
+placeholder="Triple SAR"
+>
 
 </div>
 
-<div class="smallGrid" style="margin-top:10px">
 
-<input id="newQuad" type="number" placeholder="Quad SAR">
+<div
+class="smallGrid"
+style="margin-top:10px"
+>
 
-<button class="primary" onclick="saveHotel()">
+<input
+id="newQuad"
+type="number"
+placeholder="Quad SAR"
+>
+
+<button
+class="primary"
+onclick="saveHotel()"
+>
 SAVE HOTEL
 </button>
 
 </div>
 
-<p>Prices are saved online and visible to all customers.</p>
+<p>
+Changes are saved online and visible to all customers.
+</p>
 
 </div>
+
 
 <div id="hotelList"></div>
 
 </div>
 
 
-<div id="transfers" class="panel">
+<!-- TRANSFERS -->
+
+<div
+id="transfers"
+class="panel"
+>
 
 <div class="addBox">
 
-<h3>Transfer Price</h3>
+<h3>
+Transfer Price
+</h3>
 
 <div class="smallGrid">
 
-<select id="adminRoute">
-<option value="">Select Route</option>
+<select
+id="adminRoute"
+>
+
+<option value="">
+Select Route
+</option>
+
 </select>
 
-<select id="adminVehicle">
-<option value="">Select Vehicle</option>
+
+<select
+id="adminVehicle"
+>
+
+<option value="">
+Select Vehicle
+</option>
+
 </select>
 
-<input id="adminTransferPrice" type="number" placeholder="Price SAR">
 
-<button class="primary" onclick="saveTransferPrice()">
+<input
+id="adminTransferPrice"
+type="number"
+placeholder="Price SAR"
+>
+
+
+<button
+class="primary"
+onclick="saveTransferPrice()"
+>
 SAVE PRICE
 </button>
 
@@ -314,37 +1257,56 @@ SAVE PRICE
 </div>
 
 
+<div id="transferList"></div>
+
+</div>
+
+
+<!-- VEHICLES -->
+
+<div
+id="vehicles"
+class="panel"
+>
+
 <div class="addBox">
 
-<h3>Vehicle Management</h3>
+<h3>
+Vehicle Management
+</h3>
 
 <div class="smallGrid">
 
-<input id="newVehicleName" placeholder="Vehicle Name">
+<input
+id="newVehicleName"
+placeholder="Vehicle Name"
+>
 
-<button class="primary" onclick="addVehicle()">
+<button
+class="primary"
+onclick="addVehicle()"
+>
 ADD VEHICLE
 </button>
 
 </div>
 
-</div>
-
-<div id="transferList"></div>
-
-</div>
-
-</div>
-</div>
+<p>
+New vehicles will be visible to all customers.
+</p>
 
 </div>
 
 
-<footer>
-<strong>AL FAKHAMA TRAVEL</strong>
-<p>Premium Hotel Booking & Travel Services</p>
-<p>Madinah • Makkah • Saudi Arabia</p>
-</footer>
+<div id="vehicleList"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 
 <script>
@@ -353,7 +1315,7 @@ const API =
 "https://al-fakhama-booking.alfakhama-travel-uzb.workers.dev";
 
 
-let appData = {
+let appData={
 hotels:{},
 transfers:{},
 vehicles:[],
@@ -362,40 +1324,62 @@ bookings:[]
 };
 
 
-const destination =
-document.getElementById("destination");
+const destination=
+document.getElementById(
+"destination"
+);
 
-const hotel =
-document.getElementById("hotel");
+const hotel=
+document.getElementById(
+"hotel"
+);
 
-const room =
-document.getElementById("room");
+const room=
+document.getElementById(
+"room"
+);
 
-const transferRoute =
-document.getElementById("transferRoute");
+const transferRoute=
+document.getElementById(
+"transferRoute"
+);
 
-const vehicle =
-document.getElementById("vehicle");
+const vehicle=
+document.getElementById(
+"vehicle"
+);
 
-const vehicleBox =
-document.getElementById("vehicleBox");
+const vehicleBox=
+document.getElementById(
+"vehicleBox"
+);
 
 
-async function api(url,options={}){
+async function api(
+url,
+options={}
+){
 
-const response =
-await fetch(API+url,{
+const response=
+await fetch(
+API+url,
+{
 ...options,
+
 headers:{
-"Content-Type":"application/json",
+"Content-Type":
+"application/json",
+
 ...(options.headers||{})
 }
-});
+}
+);
 
 if(!response.ok){
 
 throw new Error(
-"Server error: "+response.status
+"Server error: "+
+response.status
 );
 
 }
@@ -409,21 +1393,23 @@ async function loadData(){
 
 try{
 
-const data =
-await api("/api/data");
+const data=
+await api(
+"/api/data"
+);
 
 if(data.success){
 
-appData.hotels =
+appData.hotels=
 data.hotels||{};
 
-appData.transfers =
+appData.transfers=
 data.transfers||{};
 
-appData.vehicles =
+appData.vehicles=
 data.vehicles||[];
 
-appData.routes =
+appData.routes=
 data.routes||{};
 
 }
@@ -438,10 +1424,6 @@ loadVehicles();
 
 console.error(error);
 
-alert(
-"Could not load online data. Please refresh the page."
-);
-
 }
 
 }
@@ -449,25 +1431,31 @@ alert(
 
 function loadHotels(){
 
-hotel.innerHTML =
+hotel.innerHTML=
 '<option value="">Select Hotel</option>';
 
-const data =
+const data=
 appData.hotels[
 destination.value
 ]||{};
 
-Object.keys(data).forEach(name=>{
+Object.keys(data)
+.forEach(name=>{
 
-const option =
-document.createElement("option");
+const option=
+document.createElement(
+"option"
+);
 
 option.value=name;
 
-option.textContent =
-name+" — Breakfast Included";
+option.textContent=
+name+
+" — Breakfast Included";
 
-hotel.appendChild(option);
+hotel.appendChild(
+option
+);
 
 });
 
@@ -476,24 +1464,28 @@ hotel.appendChild(option);
 
 function loadRoutes(){
 
-transferRoute.innerHTML =
+transferRoute.innerHTML=
 '<option value="">No Transfer</option>';
 
-const list =
+const list=
 appData.routes[
 destination.value
 ]||[];
 
 list.forEach(route=>{
 
-const option =
-document.createElement("option");
+const option=
+document.createElement(
+"option"
+);
 
 option.value=route;
 
 option.textContent=route;
 
-transferRoute.appendChild(option);
+transferRoute.appendChild(
+option
+);
 
 });
 
@@ -502,19 +1494,24 @@ transferRoute.appendChild(option);
 
 function loadVehicles(){
 
-vehicle.innerHTML =
+vehicle.innerHTML=
 '<option value="">Select Vehicle</option>';
 
-appData.vehicles.forEach(name=>{
+appData.vehicles
+.forEach(name=>{
 
-const option =
-document.createElement("option");
+const option=
+document.createElement(
+"option"
+);
 
 option.value=name;
 
 option.textContent=name;
 
-vehicle.appendChild(option);
+vehicle.appendChild(
+option
+);
 
 });
 
@@ -550,13 +1547,23 @@ transferRoute.addEventListener(
 "change",
 ()=>{
 
-if(transferRoute.value){
+if(
+transferRoute.value
+){
 
-vehicleBox.classList.remove("hidden");
+vehicleBox
+.classList
+.remove(
+"hidden"
+);
 
 }else{
 
-vehicleBox.classList.add("hidden");
+vehicleBox
+.classList
+.add(
+"hidden"
+);
 
 vehicle.value="";
 
@@ -575,7 +1582,9 @@ calculate
 
 
 document
-.querySelectorAll("input,select")
+.querySelectorAll(
+"input,select"
+)
 .forEach(element=>{
 
 element.addEventListener(
@@ -593,45 +1602,59 @@ calculate
 
 function calculate(){
 
-const d =
+const d=
 destination.value;
 
-const h =
+const h=
 hotel.value;
 
-const r =
+const r=
 room.value;
 
-const rooms =
+const rooms=
 Number(
-document.getElementById("rooms").value
+document.getElementById(
+"rooms"
+).value
 )||1;
 
+const checkin=
+document.getElementById(
+"checkin"
+).value;
 
-const checkin =
-document.getElementById("checkin").value;
-
-const checkout =
-document.getElementById("checkout").value;
+const checkout=
+document.getElementById(
+"checkout"
+).value;
 
 
 let nights=0;
 
 
-if(checkin&&checkout){
+if(
+checkin&&
+checkout
+){
 
-const start =
-new Date(checkin);
-
-const end =
-new Date(checkout);
-
-nights =
-Math.round(
-(end-start)/86400000
+const start=
+new Date(
+checkin
 );
 
-if(nights<0)nights=0;
+const end=
+new Date(
+checkout
+);
+
+nights=
+Math.round(
+(end-start)/
+86400000
+);
+
+if(nights<0)
+nights=0;
 
 }
 
@@ -644,7 +1667,7 @@ appData.hotels[d]&&
 appData.hotels[d][h]
 ){
 
-roomPrice =
+roomPrice=
 Number(
 appData.hotels[d][h][r]
 )||0;
@@ -652,7 +1675,7 @@ appData.hotels[d][h][r]
 }
 
 
-const hotelTotal =
+const hotelTotal=
 roomPrice*
 rooms*
 nights;
@@ -666,12 +1689,12 @@ transferRoute.value&&
 vehicle.value
 ){
 
-const key =
+const key=
 transferRoute.value+
 "|"+
 vehicle.value;
 
-transferPrice =
+transferPrice=
 Number(
 appData.transfers[key]
 )||0;
@@ -679,21 +1702,21 @@ appData.transfers[key]
 }
 
 
-const final =
+const final=
 hotelTotal+
 transferPrice;
 
 
 document.getElementById(
 "total"
-).innerText =
+).innerText=
 final.toLocaleString()+
 " SAR";
 
 
 document.getElementById(
 "breakdown"
-).innerHTML =
+).innerHTML=
 
 "Hotel: "+
 roomPrice+
@@ -706,7 +1729,8 @@ nights+
 (
 transferPrice>0
 ?
-transferPrice+" SAR"
+transferPrice+
+" SAR"
 :
 "No price set"
 )+
@@ -717,21 +1741,25 @@ transferPrice+" SAR"
 
 async function sendBooking(){
 
-const name =
-document.getElementById("name")
-.value.trim();
+const name=
+document.getElementById(
+"name"
+).value.trim();
 
-const passport =
-document.getElementById("passport")
-.value.trim();
+const passport=
+document.getElementById(
+"passport"
+).value.trim();
 
-const phone =
-document.getElementById("phone")
-.value.trim();
+const phone=
+document.getElementById(
+"phone"
+).value.trim();
 
-const email =
-document.getElementById("email")
-.value.trim();
+const email=
+document.getElementById(
+"email"
+).value.trim();
 
 
 if(
@@ -741,8 +1769,12 @@ if(
 !email||
 !destination.value||
 !hotel.value||
-!document.getElementById("checkin").value||
-!document.getElementById("checkout").value
+!document.getElementById(
+"checkin"
+).value||
+!document.getElementById(
+"checkout"
+).value
 ){
 
 alert(
@@ -765,7 +1797,9 @@ phone,
 email,
 
 nationality:
-document.getElementById("nationality").value,
+document.getElementById(
+"nationality"
+).value,
 
 destination:
 destination.value,
@@ -777,22 +1811,34 @@ room:
 room.value,
 
 rooms:
-document.getElementById("rooms").value,
+document.getElementById(
+"rooms"
+).value,
 
 adults:
-document.getElementById("adults").value,
+document.getElementById(
+"adults"
+).value,
 
 children:
-document.getElementById("children").value,
+document.getElementById(
+"children"
+).value,
 
 checkin:
-document.getElementById("checkin").value,
+document.getElementById(
+"checkin"
+).value,
 
 checkout:
-document.getElementById("checkout").value,
+document.getElementById(
+"checkout"
+).value,
 
 meal:
-document.getElementById("meal").value,
+document.getElementById(
+"meal"
+).value,
 
 transferRoute:
 transferRoute.value,
@@ -801,10 +1847,14 @@ vehicle:
 vehicle.value,
 
 requests:
-document.getElementById("requests").value,
+document.getElementById(
+"requests"
+).value,
 
 total:
-document.getElementById("total").innerText
+document.getElementById(
+"total"
+).innerText
 
 };
 
@@ -815,22 +1865,30 @@ await api(
 "/api/bookings",
 {
 method:"POST",
-body:JSON.stringify(booking)
+body:
+JSON.stringify(
+booking
+)
 }
 );
 
 
 document.getElementById(
 "success"
-).style.display="block";
+).style.display=
+"block";
 
 
-window.scrollTo({
+window.scrollTo(
+{
 top:
-document.getElementById("success")
-.offsetTop,
+document.getElementById(
+"success"
+).offsetTop,
+
 behavior:"smooth"
-});
+}
+);
 
 
 }catch(error){
@@ -846,67 +1904,120 @@ alert(
 }
 
 
-async function openAdmin(){
+/* =========================
+ADMIN LOGIN
+========================= */
 
-const password =
-prompt("Admin Password:");
+function checkAdmin(){
 
-if(password!=="ALFAKHAMA2026"){
+const password=
+prompt(
+"Admin Password:"
+);
 
-if(password!==null)
-alert("Wrong password.");
+if(
+password===
+"ALFAKHAMA2026"
+){
 
-return;
+sessionStorage.setItem(
+"alfakhama_admin",
+"true"
+);
+
+showAdmin();
+
+}else{
+
+if(
+password!==null
+){
+
+alert(
+"Wrong password."
+);
+
+}
+
+}
 
 }
 
 
+function showAdmin(){
+
 document.getElementById(
-"bookingPage"
-).style.display="none";
+"publicPage"
+).style.display=
+"none";
 
 document.getElementById(
 "adminPage"
-).style.display="block";
+).style.display=
+"block";
 
-
-await refreshAdmin();
+refreshAdmin();
 
 }
 
 
-function closeAdmin(){
+function logoutAdmin(){
+
+sessionStorage.removeItem(
+"alfakhama_admin"
+);
 
 document.getElementById(
 "adminPage"
-).style.display="none";
+).style.display=
+"none";
 
 document.getElementById(
-"bookingPage"
-).style.display="block";
+"publicPage"
+).style.display=
+"block";
 
 }
 
 
-function tab(id,btn){
+function tab(
+id,
+btn
+){
 
 document
-.querySelectorAll(".panel")
-.forEach(x=>
-x.classList.remove("active")
+.querySelectorAll(
+".panel"
+)
+.forEach(
+x=>
+x.classList.remove(
+"active"
+)
 );
 
 document
-.querySelectorAll(".tabs button")
-.forEach(x=>
-x.classList.remove("active")
+.querySelectorAll(
+".tabs button"
+)
+.forEach(
+x=>
+x.classList.remove(
+"active"
+)
 );
 
 document
-.getElementById(id)
-.classList.add("active");
+.getElementById(
+id
+)
+.classList.add(
+"active"
+);
 
-btn.classList.add("active");
+btn.classList.add(
+"active"
+);
 
 }
 
@@ -915,29 +2026,35 @@ async function refreshAdmin(){
 
 try{
 
-const data =
-await api("/api/data");
+const data=
+await api(
+"/api/data"
+);
 
-appData.hotels =
+appData.hotels=
 data.hotels||{};
 
-appData.transfers =
+appData.transfers=
 data.transfers||{};
 
-appData.vehicles =
+appData.vehicles=
 data.vehicles||[];
 
-appData.routes =
+appData.routes=
 data.routes||{};
 
 
-const bookings =
-await api("/api/bookings");
+const bookings=
+await api(
+"/api/bookings"
+);
 
-appData.bookings =
+appData.bookings=
 Array.isArray(bookings)
-?bookings
-:[];
+?
+bookings
+:
+[];
 
 
 renderBookings();
@@ -945,6 +2062,8 @@ renderBookings();
 renderHotels();
 
 renderTransfers();
+
+renderVehicles();
 
 loadAdminRoutes();
 
@@ -963,25 +2082,27 @@ alert(
 }
 
 
-async function renderBookings(){
+function renderBookings(){
 
-const list =
+const list=
 document.getElementById(
 "bookingList"
 );
 
-const search =
+const search=
 (
-document.getElementById("search")
-.value||""
+document.getElementById(
+"search"
+).value||
+""
 ).toLowerCase();
 
 
-const data =
+const data=
 appData.bookings||[];
 
 
-const filtered =
+const filtered=
 data.filter(x=>
 
 (x.name||"")
@@ -1011,44 +2132,54 @@ data.filter(x=>
 
 document.getElementById(
 "statAll"
-).innerText=data.length;
+).innerText=
+data.length;
 
 
 document.getElementById(
 "statNew"
 ).innerText=
-data.filter(x=>
-x.status==="New"
+data.filter(
+x=>
+x.status===
+"New"
 ).length;
 
 
 document.getElementById(
 "statConfirmed"
 ).innerText=
-data.filter(x=>
-x.status==="Confirmed"
+data.filter(
+x=>
+x.status===
+"Confirmed"
 ).length;
 
 
 document.getElementById(
 "statCancelled"
 ).innerText=
-data.filter(x=>
-x.status==="Cancelled"
+data.filter(
+x=>
+x.status===
+"Cancelled"
 ).length;
 
 
-list.innerHTML =
+list.innerHTML=
 filtered.map(x=>`
 
 <div class="item">
 
 <div class="itemHead">
 
-<h3>${x.name||"-"}</h3>
+<h3>
+${x.name||"-"}
+</h3>
 
 <span class="badge ${
-(x.status||"New").toLowerCase()
+(x.status||"New")
+.toLowerCase()
 }">
 ${x.status||"New"}
 </span>
@@ -1058,36 +2189,48 @@ ${x.status||"New"}
 <p>
 
 <strong>Passport:</strong>
-${x.passport||"-"}<br>
+${x.passport||"-"}
+<br>
 
 <strong>Phone:</strong>
-${x.phone||"-"}<br>
+${x.phone||"-"}
+<br>
 
 <strong>Email:</strong>
-${x.email||"-"}<br>
+${x.email||"-"}
+<br>
 
 <strong>Destination:</strong>
-${x.destination||"-"}<br>
+${x.destination||"-"}
+<br>
 
 <strong>Hotel:</strong>
-${x.hotel||"-"}<br>
+${x.hotel||"-"}
+<br>
 
 <strong>Room:</strong>
-${x.room||"-"} |
-${x.rooms||"-"} room(s)<br>
+${x.room||"-"}
+|
+${x.rooms||"-"} room(s)
+<br>
 
 <strong>Dates:</strong>
-${x.checkin||"-"} →
-${x.checkout||"-"}<br>
+${x.checkin||"-"}
+→
+${x.checkout||"-"}
+<br>
 
 <strong>Transfer:</strong>
-${x.transferRoute||"No Transfer"}<br>
+${x.transferRoute||"No Transfer"}
+<br>
 
 <strong>Vehicle:</strong>
-${x.vehicle||"-"}<br>
+${x.vehicle||"-"}
+<br>
 
 <strong>Total:</strong>
-${x.total||"0 SAR"}<br>
+${x.total||"0 SAR"}
+<br>
 
 <strong>Received:</strong>
 ${x.date||"-"}
@@ -1096,18 +2239,24 @@ ${x.date||"-"}
 
 <div class="actions">
 
-<button class="confirm"
-onclick="statusBooking('${x.id}','Confirmed')">
+<button
+class="confirm"
+onclick="statusBooking('${x.id}','Confirmed')"
+>
 CONFIRM
 </button>
 
-<button class="cancel"
-onclick="statusBooking('${x.id}','Cancelled')">
+<button
+class="cancel"
+onclick="statusBooking('${x.id}','Cancelled')"
+>
 CANCEL
 </button>
 
-<button class="delete"
-onclick="deleteBooking('${x.id}')">
+<button
+class="delete"
+onclick="deleteBooking('${x.id}')"
+>
 DELETE
 </button>
 
@@ -1120,7 +2269,10 @@ DELETE
 }
 
 
-async function statusBooking(id,status){
+async function statusBooking(
+id,
+status
+){
 
 try{
 
@@ -1128,7 +2280,8 @@ await api(
 "/api/bookings/"+id,
 {
 method:"PUT",
-body:JSON.stringify({
+body:
+JSON.stringify({
 status
 })
 }
@@ -1147,13 +2300,16 @@ alert(
 }
 
 
-async function deleteBooking(id){
+async function deleteBooking(
+id
+){
 
 if(
 !confirm(
 "Delete this booking?"
 )
-)return;
+)
+return;
 
 
 try{
@@ -1180,31 +2336,31 @@ alert(
 
 async function saveHotel(){
 
-const name =
+const name=
 document.getElementById(
 "newHotelName"
 ).value.trim();
 
-const destination =
+const destination=
 document.getElementById(
 "newHotelDestination"
 ).value;
 
-const Double =
+const Double=
 Number(
 document.getElementById(
 "newDouble"
 ).value
 );
 
-const Triple =
+const Triple=
 Number(
 document.getElementById(
 "newTriple"
 ).value
 );
 
-const Quad =
+const Quad=
 Number(
 document.getElementById(
 "newQuad"
@@ -1234,7 +2390,9 @@ await api(
 "/api/hotels",
 {
 method:"POST",
-body:JSON.stringify({
+
+body:
+JSON.stringify({
 destination,
 name,
 Double,
@@ -1243,23 +2401,6 @@ Quad
 })
 }
 );
-
-
-document.getElementById(
-"newHotelName"
-).value="";
-
-document.getElementById(
-"newDouble"
-).value="";
-
-document.getElementById(
-"newTriple"
-).value="";
-
-document.getElementById(
-"newQuad"
-).value="";
 
 
 await refreshAdmin();
@@ -1281,7 +2422,7 @@ alert(
 
 function renderHotels(){
 
-const list =
+const list=
 document.getElementById(
 "hotelList"
 );
@@ -1291,17 +2432,21 @@ let html="";
 
 Object.keys(
 appData.hotels||{}
-).forEach(destination=>{
+)
+.forEach(destination=>{
 
 html+=
-"<h3>"+destination+"</h3>";
+"<h3>"+
+destination+
+"</h3>";
 
 
 Object.keys(
 appData.hotels[destination]||{}
-).forEach(name=>{
+)
+.forEach(name=>{
 
-const x =
+const x=
 appData.hotels[destination][name];
 
 
@@ -1309,19 +2454,33 @@ html+=`
 
 <div class="item">
 
-<strong>${name}</strong>
+<strong>
+${name}
+</strong>
 
 <p>
-🍳 Breakfast Included<br>
-Double: ${x.Double} SAR |
-Triple: ${x.Triple} SAR |
-Quad: ${x.Quad} SAR
+🍳 Breakfast Included
+<br>
+Double:
+${x.Double}
+SAR |
+Triple:
+${x.Triple}
+SAR |
+Quad:
+${x.Quad}
+SAR
 </p>
 
 <div class="actions">
 
-<button class="delete"
-onclick="deleteHotel('${encodeURIComponent(destination)}','${encodeURIComponent(name)}')">
+<button
+class="delete"
+onclick="deleteHotel(
+'${encodeURIComponent(destination)}',
+'${encodeURIComponent(name)}'
+)"
+>
 DELETE HOTEL
 </button>
 
@@ -1336,18 +2495,23 @@ DELETE HOTEL
 });
 
 
-list.innerHTML=html;
+list.innerHTML=
+html;
 
 }
 
 
-async function deleteHotel(destination,name){
+async function deleteHotel(
+destination,
+name
+){
 
 if(
 !confirm(
 "Delete this hotel?"
 )
-)return;
+)
+return;
 
 
 try{
@@ -1356,16 +2520,23 @@ await api(
 "/api/hotels",
 {
 method:"DELETE",
-body:JSON.stringify({
+
+body:
+JSON.stringify({
+
 destination:
-decodeURIComponent(destination),
+decodeURIComponent(
+destination
+),
 
 name:
-decodeURIComponent(name)
+decodeURIComponent(
+name
+)
+
 })
 }
 );
-
 
 await refreshAdmin();
 
@@ -1382,32 +2553,41 @@ alert(
 
 function loadAdminRoutes(){
 
-const select =
+const select=
 document.getElementById(
 "adminRoute"
 );
 
-select.innerHTML =
+select.innerHTML=
 '<option value="">Select Route</option>';
 
 
-const allRoutes =
+const allRoutes=
 Object.values(
 appData.routes||{}
-).flat();
+)
+.flat();
 
 
-[...new Set(allRoutes)]
+[
+...new Set(
+allRoutes
+)
+]
 .forEach(route=>{
 
-const o =
-document.createElement("option");
+const option=
+document.createElement(
+"option"
+);
 
-o.value=route;
+option.value=route;
 
-o.textContent=route;
+option.textContent=route;
 
-select.appendChild(o);
+select.appendChild(
+option
+);
 
 });
 
@@ -1416,26 +2596,30 @@ select.appendChild(o);
 
 function loadAdminVehicles(){
 
-const select =
+const select=
 document.getElementById(
 "adminVehicle"
 );
 
-select.innerHTML =
+select.innerHTML=
 '<option value="">Select Vehicle</option>';
 
 
 (appData.vehicles||[])
-.forEach(vehicleName=>{
+.forEach(name=>{
 
-const o =
-document.createElement("option");
+const option=
+document.createElement(
+"option"
+);
 
-o.value=vehicleName;
+option.value=name;
 
-o.textContent=vehicleName;
+option.textContent=name;
 
-select.appendChild(o);
+select.appendChild(
+option
+);
 
 });
 
@@ -1444,17 +2628,17 @@ select.appendChild(o);
 
 async function saveTransferPrice(){
 
-const route =
+const route=
 document.getElementById(
 "adminRoute"
 ).value;
 
-const vehicle =
+const vehicle=
 document.getElementById(
 "adminVehicle"
 ).value;
 
-const price =
+const price=
 Number(
 document.getElementById(
 "adminTransferPrice"
@@ -1483,7 +2667,9 @@ await api(
 "/api/transfers",
 {
 method:"POST",
-body:JSON.stringify({
+
+body:
+JSON.stringify({
 route,
 vehicle,
 price
@@ -1491,16 +2677,10 @@ price
 }
 );
 
-
-document.getElementById(
-"adminTransferPrice"
-).value="";
-
-
 await refreshAdmin();
 
 alert(
-"Transfer price saved. All customers will see the new price."
+"Transfer price saved for all customers."
 );
 
 }catch(error){
@@ -1514,9 +2694,130 @@ alert(
 }
 
 
+function renderTransfers(){
+
+const list=
+document.getElementById(
+"transferList"
+);
+
+let html="";
+
+
+Object.keys(
+appData.transfers||{}
+)
+.forEach(key=>{
+
+const parts=
+key.split("|");
+
+const route=
+parts[0];
+
+const vehicle=
+parts.slice(1)
+.join("|");
+
+const price=
+appData.transfers[key];
+
+
+html+=`
+
+<div class="item">
+
+<strong>
+${route}
+</strong>
+
+<p>
+🚘 ${vehicle}
+<br>
+💰 ${price} SAR
+</p>
+
+<div class="actions">
+
+<button
+class="delete"
+onclick="deleteTransferPrice(
+'${encodeURIComponent(route)}',
+'${encodeURIComponent(vehicle)}'
+)"
+>
+DELETE PRICE
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+list.innerHTML=
+html||
+"<p>No transfer prices set yet.</p>";
+
+}
+
+
+async function deleteTransferPrice(
+route,
+vehicle
+){
+
+if(
+!confirm(
+"Delete this transfer price?"
+)
+)
+return;
+
+
+try{
+
+await api(
+"/api/transfers",
+{
+method:"DELETE",
+
+body:
+JSON.stringify({
+
+route:
+decodeURIComponent(
+route
+),
+
+vehicle:
+decodeURIComponent(
+vehicle
+)
+
+})
+}
+);
+
+await refreshAdmin();
+
+}catch(error){
+
+alert(
+"Could not delete transfer price."
+);
+
+}
+
+}
+
+
 async function addVehicle(){
 
-const name =
+const name=
 document.getElementById(
 "newVehicleName"
 ).value.trim();
@@ -1533,69 +2834,73 @@ return;
 }
 
 
-if(
-appData.vehicles.includes(name)
-){
+try{
 
-alert(
-"Vehicle already exists."
+await api(
+"/api/vehicles",
+{
+method:"POST",
+
+body:
+JSON.stringify({
+name
+})
+}
 );
 
-return;
 
-}
-
-
-alert(
-"Your current Worker does not have a vehicle management endpoint yet. The vehicle list must be added to the Worker first."
-);
-
-}
-
-
-function renderTransfers(){
-
-const list =
 document.getElementById(
-"transferList"
+"newVehicleName"
+).value="";
+
+
+await refreshAdmin();
+
+alert(
+"Vehicle added. All customers can now see it."
+);
+
+}catch(error){
+
+alert(
+"Could not add vehicle."
+);
+
+}
+
+}
+
+
+function renderVehicles(){
+
+const list=
+document.getElementById(
+"vehicleList"
 );
 
 let html="";
 
 
-Object.keys(
-appData.transfers||{}
-).forEach(key=>{
-
-const parts =
-key.split("|");
-
-const route =
-parts[0];
-
-const vehicle =
-parts.slice(1).join("|");
-
-const price =
-appData.transfers[key];
-
+(appData.vehicles||[])
+.forEach(name=>{
 
 html+=`
 
 <div class="item">
 
-<strong>${route}</strong>
-
-<p>
-🚘 ${vehicle}<br>
-💰 ${price} SAR
-</p>
+<strong>
+🚘 ${name}
+</strong>
 
 <div class="actions">
 
-<button class="delete"
-onclick="deleteTransferPrice('${encodeURIComponent(route)}','${encodeURIComponent(vehicle)}')">
-DELETE PRICE
+<button
+class="delete"
+onclick="deleteVehicle(
+'${encodeURIComponent(name)}'
+)"
+>
+DELETE VEHICLE
 </button>
 
 </div>
@@ -1607,34 +2912,40 @@ DELETE PRICE
 });
 
 
-list.innerHTML =
+list.innerHTML=
 html||
-"<p>No transfer prices set yet.</p>";
+"<p>No vehicles available.</p>";
 
 }
 
 
-async function deleteTransferPrice(route,vehicle){
+async function deleteVehicle(
+name
+){
 
 if(
 !confirm(
-"Delete this transfer price?"
+"Delete this vehicle and its transfer prices?"
 )
-)return;
+)
+return;
 
 
 try{
 
 await api(
-"/api/transfers",
+"/api/vehicles",
 {
 method:"DELETE",
-body:JSON.stringify({
-route:
-decodeURIComponent(route),
 
-vehicle:
-decodeURIComponent(vehicle)
+body:
+JSON.stringify({
+
+name:
+decodeURIComponent(
+name
+)
+
 })
 }
 );
@@ -1645,7 +2956,7 @@ await refreshAdmin();
 }catch(error){
 
 alert(
-"Could not delete transfer price."
+"Could not delete vehicle."
 );
 
 }
@@ -1653,7 +2964,33 @@ alert(
 }
 
 
+/* =========================
+HIDDEN ADMIN ACCESS
+========================= */
+
+function checkAdminURL(){
+
+const path=
+window.location.pathname
+.toLowerCase();
+
+if(
+path===
+"/admin"||
+path===
+"/admin/"
+){
+
+checkAdmin();
+
+}
+
+}
+
+
 loadData();
+
+checkAdminURL();
 
 </script>
 
