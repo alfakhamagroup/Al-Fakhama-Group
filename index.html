@@ -3,827 +3,3012 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Al Fakhama Travel</title>
+
+<title>Al Fakhama Travel | Luxury Booking</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f6f1e8;color:#2b251d}
-header{background:linear-gradient(135deg,#211b15,#59462d);color:#fff;padding:22px}
-.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:bold;letter-spacing:2px}
-button{border:0;border-radius:10px;padding:12px 18px;cursor:pointer;font-weight:bold}
-.adminBtn{background:#c8a25c;color:#fff}
-.hero{text-align:center;color:#fff;padding:65px 20px;background:linear-gradient(rgba(35,27,18,.75),rgba(35,27,18,.75)),linear-gradient(135deg,#b3935b,#e4d0a5)}
-.hero h1{font-size:42px;margin:0 0 10px}
-.container{max-width:1050px;margin:35px auto;padding:0 18px}
-.card{background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 35px rgba(0,0,0,.08);margin-bottom:25px}
-h2{margin-top:0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.full{grid-column:1/-1}
-label{display:block;font-weight:bold;font-size:14px;margin-bottom:7px}
-input,select,textarea{width:100%;padding:14px;border:1px solid #ded3c2;border-radius:10px;background:#fffdf9;font-size:15px}
-textarea{min-height:100px}
-.primary{width:100%;margin-top:20px;background:linear-gradient(135deg,#b48c4e,#d6b675);color:#fff;font-size:16px}
-.priceBox{margin-top:25px;padding:25px;text-align:center;background:#f7efe0;border:1px solid #dfc99e;border-radius:15px}
-.price{font-size:35px;color:#9a7133;font-weight:bold;margin:8px}
-.success{display:none;margin-top:20px;padding:18px;background:#e8f6eb;color:#286a35;border-radius:10px;text-align:center}
-.admin{display:none}
-.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-.tabs button{background:#eee4d4;color:#5a4527}
-.tabs button.active{background:#b48c4e;color:white}
-.panel{display:none}
-.panel.active{display:block}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}
-.stat{padding:20px;background:#faf5ec;border-radius:12px;text-align:center}
-.stat strong{display:block;font-size:28px;color:#9b7439}
-.item{border:1px solid #e3d9ca;padding:18px;border-radius:13px;margin:12px 0;background:#fffdf9}
-.itemHead{display:flex;justify-content:space-between;gap:10px}
-.badge{padding:7px 12px;border-radius:20px;font-size:12px;font-weight:bold}
-.new{background:#e5efff;color:#285ca8}
-.confirmed{background:#e2f5e6;color:#28723a}
-.cancelled{background:#ffe5e5;color:#a12a2a}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
-.actions button{font-size:13px}
-.confirm{background:#dff1e3;color:#286b37}
-.cancel{background:#ffe2e2;color:#a12828}
-.delete{background:#29231c;color:#fff}
-.addBox{background:#faf5ec;padding:20px;border-radius:12px;margin-bottom:20px}
-.smallGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-footer{background:#211b15;color:#fff;text-align:center;padding:30px;margin-top:50px}
-@media(max-width:700px){
-.nav{flex-direction:column;gap:15px}
-.hero h1{font-size:30px}
-.grid,.smallGrid{grid-template-columns:1fr}
-.full{grid-column:auto}
-.stats{grid-template-columns:repeat(2,1fr)}
-.card{padding:20px}
-.itemHead{flex-direction:column}
+
+*{
+box-sizing:border-box
 }
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f6f1e8;
+color:#2b251d
+}
+
+header{
+background:linear-gradient(135deg,#211b15,#59462d);
+color:#fff;
+padding:22px
+}
+
+.nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:center;
+align-items:center
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+letter-spacing:2px
+}
+
+.hero{
+text-align:center;
+color:#fff;
+padding:65px 20px;
+background:
+linear-gradient(rgba(35,27,18,.75),rgba(35,27,18,.75)),
+linear-gradient(135deg,#b3935b,#e4d0a5)
+}
+
+.hero h1{
+font-size:42px;
+margin:0 0 10px
+}
+
+.hero p{
+font-size:17px
+}
+
+.container{
+max-width:1050px;
+margin:35px auto;
+padding:0 18px
+}
+
+.card{
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+margin-bottom:25px
+}
+
+h2{
+margin-top:0
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px
+}
+
+.full{
+grid-column:1/-1
+}
+
+label{
+display:block;
+font-weight:bold;
+font-size:14px;
+margin-bottom:7px
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px;
+border:1px solid #ded3c2;
+border-radius:10px;
+background:#fffdf9;
+font-size:15px
+}
+
+textarea{
+min-height:100px
+}
+
+.primary{
+width:100%;
+margin-top:20px;
+background:linear-gradient(135deg,#b48c4e,#d6b675);
+color:#fff;
+font-size:16px;
+border:0;
+border-radius:10px;
+padding:15px;
+cursor:pointer;
+font-weight:bold
+}
+
+.priceBox{
+margin-top:25px;
+padding:25px;
+text-align:center;
+background:#f7efe0;
+border:1px solid #dfc99e;
+border-radius:15px
+}
+
+.price{
+font-size:35px;
+color:#9a7133;
+font-weight:bold;
+margin:8px
+}
+
+.success{
+display:none;
+margin-top:20px;
+padding:18px;
+background:#e8f6eb;
+color:#286a35;
+border-radius:10px;
+text-align:center
+}
+
+.admin{
+display:none
+}
+
+.tabs{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px
+}
+
+.tabs button{
+background:#eee4d4;
+color:#5a4527;
+border:0;
+border-radius:10px;
+padding:12px 18px;
+font-weight:bold;
+cursor:pointer
+}
+
+.tabs button.active{
+background:#b48c4e;
+color:white
+}
+
+.panel{
+display:none
+}
+
+.panel.active{
+display:block
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:20px
+}
+
+.stat{
+padding:20px;
+background:#faf5ec;
+border-radius:12px;
+text-align:center
+}
+
+.stat strong{
+display:block;
+font-size:28px;
+color:#9b7439
+}
+
+.item{
+border:1px solid #e3d9ca;
+padding:18px;
+border-radius:13px;
+margin:12px 0;
+background:#fffdf9
+}
+
+.itemHead{
+display:flex;
+justify-content:space-between;
+gap:10px
+}
+
+.badge{
+padding:7px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold
+}
+
+.new{
+background:#e5efff;
+color:#285ca8
+}
+
+.confirmed{
+background:#e2f5e6;
+color:#28723a
+}
+
+.cancelled{
+background:#ffe5e5;
+color:#a12a2a
+}
+
+.actions{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:15px
+}
+
+.actions button{
+font-size:13px;
+border:0;
+border-radius:8px;
+padding:10px 14px;
+cursor:pointer;
+font-weight:bold
+}
+
+.confirm{
+background:#dff1e3;
+color:#286b37
+}
+
+.cancel{
+background:#ffe2e2;
+color:#a12828
+}
+
+.delete{
+background:#29231c;
+color:#fff
+}
+
+.addBox{
+background:#faf5ec;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px
+}
+
+.smallGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px
+}
+
+footer{
+background:#211b15;
+color:#fff;
+text-align:center;
+padding:30px;
+margin-top:50px
+}
+
+.adminLogin{
+max-width:450px;
+margin:80px auto
+}
+
+.hidden{
+display:none
+}
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:30px
+}
+
+.grid,
+.smallGrid{
+grid-template-columns:1fr
+}
+
+.full{
+grid-column:auto
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr)
+}
+
+.card{
+padding:20px
+}
+
+.itemHead{
+flex-direction:column
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="nav">
-<div class="logo">AL FAKHAMA TRAVEL</div>
-<button class="adminBtn" onclick="openAdmin()">ADMIN PANEL</button>
+
+<div class="logo">
+AL FAKHAMA TRAVEL
 </div>
+
+</div>
+
 </header>
 
+
 <section class="hero">
+
 <h1>Luxury Hotel Booking</h1>
-<p>Premium Hotels & Travel Services — Madinah & Makkah</p>
+
+<p>
+Premium Hotels & Travel Services — Madinah & Makkah
+</p>
+
 </section>
+
 
 <div class="container">
 
-<!-- BOOKING -->
+
+<!-- BOOKING PAGE -->
+
 <div id="bookingPage">
 
 <div class="card">
+
 <h2>Hotel & Travel Booking</h2>
-<p>Complete your booking request and our team will contact you.</p>
+
+<p>
+Complete your booking request and our team will contact you.
+</p>
+
 
 <div class="grid">
 
+
 <div>
+
 <label>Full Name *</label>
-<input id="name" placeholder="Full name">
+
+<input
+id="name"
+placeholder="Enter full name"
+>
+
 </div>
 
+
 <div>
+
+<label>Passport Number *</label>
+
+<input
+id="passport"
+placeholder="Enter passport number"
+>
+
+</div>
+
+
+<div>
+
 <label>WhatsApp / Phone *</label>
-<input id="phone" placeholder="+966 5XXXXXXXX">
+
+<input
+id="phone"
+placeholder="+966 5XXXXXXXX"
+>
+
 </div>
 
+
 <div>
+
 <label>Email *</label>
-<input id="email" type="email" placeholder="Email address">
+
+<input
+id="email"
+type="email"
+placeholder="Email address"
+>
+
 </div>
 
+
 <div>
+
 <label>Nationality</label>
-<input id="nationality" placeholder="Uzbekistan">
+
+<input
+id="nationality"
+placeholder="Uzbekistan"
+>
+
 </div>
 
+
 <div>
+
 <label>Service</label>
+
 <select id="service">
+
 <option>Hotel Booking</option>
+
 <option>Umrah Package</option>
+
 <option>Hajj Service</option>
+
 <option>Hotel + Transfer</option>
+
 <option>Transfer Only</option>
+
 </select>
+
 </div>
 
+
 <div>
+
 <label>Destination *</label>
+
 <select id="destination">
-<option value="">Select Destination</option>
-<option>Madinah</option>
-<option>Makkah</option>
+
+<option value="">
+Select Destination
+</option>
+
+<option value="Madinah">
+Madinah
+</option>
+
+<option value="Makkah">
+Makkah
+</option>
+
 </select>
+
 </div>
 
+
 <div>
+
 <label>Hotel *</label>
+
 <select id="hotel">
-<option value="">Select Hotel</option>
+
+<option value="">
+Select Hotel
+</option>
+
 </select>
+
 </div>
 
+
 <div>
+
 <label>Room Type *</label>
+
 <select id="room">
-<option>Double</option>
-<option>Triple</option>
-<option>Quad</option>
+
+<option value="Double">
+Double Room
+</option>
+
+<option value="Triple">
+Triple Room
+</option>
+
+<option value="Quad">
+Quad Room
+</option>
+
 </select>
+
 </div>
 
+
 <div>
+
 <label>Number of Rooms</label>
-<input id="rooms" type="number" min="1" value="1">
+
+<input
+id="rooms"
+type="number"
+min="1"
+value="1"
+>
+
 </div>
 
+
 <div>
+
 <label>Adults</label>
-<input id="adults" type="number" min="1" value="2">
+
+<input
+id="adults"
+type="number"
+min="1"
+value="2"
+>
+
 </div>
 
+
 <div>
+
 <label>Children</label>
-<input id="children" type="number" min="0" value="0">
+
+<input
+id="children"
+type="number"
+min="0"
+value="0"
+>
+
 </div>
 
+
 <div>
+
 <label>Check-in *</label>
-<input id="checkin" type="date">
+
+<input
+id="checkin"
+type="date"
+>
+
 </div>
 
+
 <div>
+
 <label>Check-out *</label>
-<input id="checkout" type="date">
+
+<input
+id="checkout"
+type="date"
+>
+
 </div>
 
+
 <div>
+
 <label>Meal Plan</label>
+
 <select id="meal">
-<option>Breakfast Included</option>
+
+<option>
+Breakfast Included
+</option>
+
 </select>
+
 </div>
 
+
 <div>
+
 <label>Transfer</label>
+
 <select id="transfer">
-<option value="">No Transfer</option>
+
+<option value="">
+No Transfer
+</option>
+
 </select>
+
 </div>
+
 
 <div class="full">
-<label>Special Requests</label>
-<textarea id="requests" placeholder="Any special requests..."></textarea>
-</div>
+
+<label>
+Special Requests
+</label>
+
+<textarea
+id="requests"
+placeholder="Any special requests..."
+></textarea>
 
 </div>
+
+
+</div>
+
 
 <div class="priceBox">
-<div>ESTIMATED TOTAL</div>
-<div class="price" id="total">0 SAR</div>
-<div id="breakdown">Select hotel and dates</div>
+
+<div>
+ESTIMATED TOTAL
 </div>
 
-<button class="primary" onclick="sendBooking()">REQUEST BOOKING</button>
+<div
+class="price"
+id="total"
+>
+0 SAR
+</div>
 
-<div id="success" class="success">
+<div id="breakdown">
+Select hotel and dates
+</div>
+
+</div>
+
+
+<button
+class="primary"
+onclick="sendBooking()"
+>
+
+REQUEST BOOKING
+
+</button>
+
+
+<div
+id="success"
+class="success"
+>
+
 ✓ Booking request sent successfully.
-<br>Our team will contact you shortly.
+
+<br>
+
+Our team will contact you shortly.
+
+</div>
+
+
 </div>
 
 </div>
-</div>
 
-<!-- ADMIN -->
-<div id="adminPage" class="admin">
+
+
+<!-- ADMIN PAGE -->
+
+<div
+id="adminPage"
+class="admin"
+>
+
 
 <div class="card">
 
-<h2>Al Fakhama Admin Dashboard</h2>
+
+<h2>
+Al Fakhama Admin Dashboard
+</h2>
+
 
 <div class="stats">
-<div class="stat"><strong id="statAll">0</strong>Total</div>
-<div class="stat"><strong id="statNew">0</strong>New</div>
-<div class="stat"><strong id="statConfirmed">0</strong>Confirmed</div>
-<div class="stat"><strong id="statCancelled">0</strong>Cancelled</div>
+
+<div class="stat">
+
+<strong id="statAll">
+0
+</strong>
+
+Total
+
 </div>
+
+
+<div class="stat">
+
+<strong id="statNew">
+0
+</strong>
+
+New
+
+</div>
+
+
+<div class="stat">
+
+<strong id="statConfirmed">
+0
+</strong>
+
+Confirmed
+
+</div>
+
+
+<div class="stat">
+
+<strong id="statCancelled">
+0
+</strong>
+
+Cancelled
+
+</div>
+
+</div>
+
 
 <div class="tabs">
-<button class="active" onclick="tab('bookings',this)">BOOKINGS</button>
-<button onclick="tab('hotels',this)">HOTELS</button>
-<button onclick="tab('transfers',this)">TRANSFERS</button>
-<button onclick="closeAdmin()">BACK</button>
+
+<button
+class="active"
+onclick="tab('bookings',this)"
+>
+BOOKINGS
+</button>
+
+
+<button
+onclick="tab('hotels',this)"
+>
+HOTELS
+</button>
+
+
+<button
+onclick="tab('transfers',this)"
+>
+TRANSFERS
+</button>
+
+
+<button
+onclick="logoutAdmin()"
+>
+LOGOUT
+</button>
+
 </div>
+
+
 
 <!-- BOOKINGS -->
-<div id="bookings" class="panel active">
 
-<input id="search" placeholder="Search booking..." oninput="renderBookings()">
+<div
+id="bookings"
+class="panel active"
+>
 
-<div id="bookingList"></div>
+
+<input
+id="search"
+placeholder="Search by name, passport, phone or hotel..."
+oninput="renderBookings()"
+>
+
+
+<div id="bookingList">
+</div>
+
 
 </div>
+
+
 
 <!-- HOTELS -->
-<div id="hotels" class="panel">
+
+<div
+id="hotels"
+class="panel"
+>
+
 
 <div class="addBox">
 
-<h3>Add New Hotel</h3>
+
+<h3>
+Add New Hotel
+</h3>
+
 
 <div class="smallGrid">
 
-<input id="newHotelName" placeholder="Hotel Name">
 
-<select id="newHotelDestination">
-<option>Madinah</option>
-<option>Makkah</option>
+<input
+id="newHotelName"
+placeholder="Hotel Name"
+>
+
+
+<select
+id="newHotelDestination"
+>
+
+<option>
+Madinah
+</option>
+
+<option>
+Makkah
+</option>
+
 </select>
 
-<input id="newDouble" type="number" placeholder="Double SAR">
 
-<input id="newTriple" type="number" placeholder="Triple SAR">
+<input
+id="newDouble"
+type="number"
+placeholder="Double SAR"
+>
+
+
+<input
+id="newTriple"
+type="number"
+placeholder="Triple SAR"
+>
+
+
+</div>
+
+
+<div
+class="smallGrid"
+style="margin-top:10px"
+>
+
+
+<input
+id="newQuad"
+type="number"
+placeholder="Quad SAR"
+>
+
+
+<button
+class="primary"
+onclick="addHotel()"
+>
+
+ADD HOTEL
+
+</button>
+
 
 </div>
 
-<div class="smallGrid" style="margin-top:10px">
 
-<input id="newQuad" type="number" placeholder="Quad SAR">
+<p>
+🍳 All hotel prices include Breakfast.
+</p>
 
-<button class="primary" onclick="addHotel()">ADD HOTEL</button>
-
-</div>
-
-<p>All hotel prices include Breakfast.</p>
 
 </div>
 
-<div id="hotelList"></div>
+
+<div id="hotelList">
+</div>
+
 
 </div>
+
+
 
 <!-- TRANSFERS -->
-<div id="transfers" class="panel">
+
+<div
+id="transfers"
+class="panel"
+>
+
 
 <div class="addBox">
 
-<h3>Add New Transfer Vehicle</h3>
+
+<h3>
+Add New Transfer Vehicle
+</h3>
+
 
 <div class="smallGrid">
 
-<input id="newTransferName" placeholder="Vehicle Name">
 
-<input id="newTransferPrice" type="number" placeholder="Price SAR">
+<input
+id="newTransferName"
+placeholder="Vehicle Name"
+>
 
-<button class="primary" onclick="addTransfer()">ADD TRANSFER</button>
+
+<input
+id="newTransferPrice"
+type="number"
+placeholder="Price SAR"
+>
+
+
+<button
+class="primary"
+onclick="addTransfer()"
+>
+
+ADD TRANSFER
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+<div id="transferList">
+</div>
+
+
+</div>
+
 
 </div>
 
 </div>
 
-<div id="transferList"></div>
-
 </div>
 
-</div>
 
-</div>
-
-</div>
 
 <footer>
-<strong>AL FAKHAMA TRAVEL</strong>
-<p>Premium Hotel Booking & Travel Services</p>
-<p>Madinah • Makkah • Saudi Arabia</p>
+
+<strong>
+AL FAKHAMA TRAVEL
+</strong>
+
+<p>
+Premium Hotel Booking & Travel Services
+</p>
+
+<p>
+Madinah • Makkah • Saudi Arabia
+</p>
+
 </footer>
+
+
 
 <script>
 
+
+/* DEFAULT HOTELS */
+
 const defaultHotels={
+
 Madinah:{
-"Maien Taiba Hotel":{Double:500,Triple:560,Quad:620},
-"Valy Al Madinah Hotel":{Double:490,Triple:550,Quad:610},
-"View Al Madinah Hotel":{Double:520,Triple:580,Quad:640},
-"GEWAR AL ANDALUS":{Double:500,Triple:550,Quad:600}
+
+"Maien Taiba Hotel":{
+Double:500,
+Triple:560,
+Quad:620
 },
-Makkah:{
-"Anjum Hotel Makkah":{Double:580,Triple:680,Quad:780},
-"Movinpik Makkah":{Double:650,Triple:775,Quad:900}
+
+"Valy Al Madinah Hotel":{
+Double:490,
+Triple:550,
+Quad:610
+},
+
+"View Al Madinah Hotel":{
+Double:520,
+Triple:580,
+Quad:640
+},
+
+"GEWAR AL ANDALUS":{
+Double:500,
+Triple:550,
+Quad:600
 }
+
+},
+
+Makkah:{
+
+"Anjum Hotel Makkah":{
+Double:580,
+Triple:680,
+Quad:780
+},
+
+"Movinpik Makkah":{
+Double:650,
+Triple:775,
+Quad:900
+}
+
+}
+
 };
 
+
+
+/* DEFAULT TRANSFERS */
+
 const defaultTransfers=[
-{name:"GMC Yukon 2025",price:0},
-{name:"Kia Carnival",price:0},
-{name:"Mercedes S-Class 2025",price:0}
+
+{
+name:"GMC Yukon 2025",
+price:0
+},
+
+{
+name:"Kia Carnival",
+price:0
+},
+
+{
+name:"Mercedes S-Class 2025",
+price:0
+}
+
 ];
 
+
+
 function getHotels(){
-return JSON.parse(localStorage.getItem("alfakhamaHotels")||JSON.stringify(defaultHotels));
+
+return JSON.parse(
+
+localStorage.getItem(
+"alfakhamaHotels"
+)
+
+||
+
+JSON.stringify(
+defaultHotels
+)
+
+);
+
 }
 
-function saveHotels(x){
-localStorage.setItem("alfakhamaHotels",JSON.stringify(x));
+
+function saveHotels(data){
+
+localStorage.setItem(
+
+"alfakhamaHotels",
+
+JSON.stringify(data)
+
+);
+
 }
+
+
 
 function getTransfers(){
-return JSON.parse(localStorage.getItem("alfakhamaTransfers")||JSON.stringify(defaultTransfers));
+
+return JSON.parse(
+
+localStorage.getItem(
+"alfakhamaTransfers"
+)
+
+||
+
+JSON.stringify(
+defaultTransfers
+)
+
+);
+
 }
 
-function saveTransfers(x){
-localStorage.setItem("alfakhamaTransfers",JSON.stringify(x));
+
+function saveTransfers(data){
+
+localStorage.setItem(
+
+"alfakhamaTransfers",
+
+JSON.stringify(data)
+
+);
+
 }
+
+
 
 function getBookings(){
-return JSON.parse(localStorage.getItem("alfakhamaBookings")||"[]");
+
+return JSON.parse(
+
+localStorage.getItem(
+"alfakhamaBookings"
+)
+
+||
+
+"[]"
+
+);
+
 }
 
-function saveBookings(x){
-localStorage.setItem("alfakhamaBookings",JSON.stringify(x));
+
+function saveBookings(data){
+
+localStorage.setItem(
+
+"alfakhamaBookings",
+
+JSON.stringify(data)
+
+);
+
 }
 
-const destination=document.getElementById("destination");
-const hotel=document.getElementById("hotel");
-const room=document.getElementById("room");
 
-destination.onchange=loadHotels;
+
+const destination=
+document.getElementById(
+"destination"
+);
+
+
+const hotel=
+document.getElementById(
+"hotel"
+);
+
+
+const room=
+document.getElementById(
+"room"
+);
+
+
+
+destination.onchange=
+loadHotels;
+
+
 
 function loadHotels(){
 
-hotel.innerHTML='<option value="">Select Hotel</option>';
+hotel.innerHTML=
 
-let data=getHotels()[destination.value]||{};
+'<option value="">Select Hotel</option>';
 
-Object.keys(data).forEach(x=>{
-let o=document.createElement("option");
-o.value=x;
-o.textContent=x+" — Breakfast Included";
-hotel.appendChild(o);
-});
+
+let data=
+
+getHotels()
+[destination.value]
+
+||
+
+{};
+
+
+Object.keys(data).forEach(
+
+function(name){
+
+let option=
+document.createElement(
+"option"
+);
+
+
+option.value=
+name;
+
+
+option.textContent=
+name+
+" — Breakfast Included";
+
+
+hotel.appendChild(
+option
+);
+
+}
+
+);
+
 
 calculate();
+
 }
+
+
 
 function loadTransfers(){
 
-let select=document.getElementById("transfer");
+let select=
 
-select.innerHTML='<option value="">No Transfer</option>';
+document.getElementById(
+"transfer"
+);
 
-getTransfers().forEach(x=>{
 
-let o=document.createElement("option");
+select.innerHTML=
 
-o.value=x.name;
+'<option value="">No Transfer</option>';
 
-o.textContent=x.name+(x.price>0?" — "+x.price+" SAR":"");
 
-select.appendChild(o);
+getTransfers().forEach(
 
-});
+function(item){
+
+let option=
+document.createElement(
+"option"
+);
+
+
+option.value=
+item.name;
+
+
+option.textContent=
+
+item.name+
+
+(
+
+item.price>0
+
+?
+
+" — "+item.price+" SAR"
+
+:
+
+""
+
+);
+
+
+select.appendChild(
+option
+);
 
 }
+
+);
+
+}
+
+
 
 function calculate(){
 
-let data=getHotels();
+let data=
+getHotels();
 
-let d=destination.value;
-let h=hotel.value;
-let r=room.value;
 
-let rooms=parseInt(document.getElementById("rooms").value)||1;
+let d=
+destination.value;
 
-let start=new Date(document.getElementById("checkin").value);
-let end=new Date(document.getElementById("checkout").value);
+
+let h=
+hotel.value;
+
+
+let r=
+room.value;
+
+
+let roomCount=
+
+parseInt(
+
+document.getElementById(
+"rooms"
+).value
+
+)
+
+||
+
+1;
+
+
 
 let nights=0;
 
-if(!isNaN(start)&&!isNaN(end)){
-nights=Math.round((end-start)/86400000);
+
+if(
+
+document.getElementById(
+"checkin"
+).value
+
+&&
+
+document.getElementById(
+"checkout"
+).value
+
+){
+
+
+let start=
+
+new Date(
+
+document.getElementById(
+"checkin"
+).value
+
+);
+
+
+let end=
+
+new Date(
+
+document.getElementById(
+"checkout"
+).value
+
+);
+
+
+nights=
+
+Math.round(
+
+(end-start)
+
+/
+
+86400000
+
+);
+
 }
+
+
 
 let price=0;
 
-if(data[d]&&data[d][h]){
-price=data[d][h][r]||0;
-}
 
-let hotelTotal=price*rooms*nights;
+if(
 
-let transferName=document.getElementById("transfer").value;
+data[d]
 
-let transfer=getTransfers().find(x=>x.name===transferName);
+&&
 
-let transferPrice=transfer?Number(transfer.price):0;
+data[d][h]
 
-let final=hotelTotal+transferPrice;
+){
 
-document.getElementById("total").innerText=
-final.toLocaleString()+" SAR";
+price=
 
-document.getElementById("breakdown").innerText=
-price+" SAR × "+rooms+" room × "+nights+
-" nights + transfer "+transferPrice+" SAR";
+data[d][h][r]
+
+||
+
+0;
 
 }
 
-document.querySelectorAll("input,select").forEach(x=>{
-x.addEventListener("change",calculate);
-x.addEventListener("input",calculate);
-});
 
-document.getElementById("transfer").onchange=calculate;
 
-function sendBooking(){
+let hotelTotal=
 
-let name=document.getElementById("name").value.trim();
-let phone=document.getElementById("phone").value.trim();
-let email=document.getElementById("email").value.trim();
+price*
 
-if(!name||!phone||!email){
-alert("Please fill in Name, Phone and Email.");
+roomCount*
+
+nights;
+
+
+
+let transferName=
+
+document.getElementById(
+"transfer"
+).value;
+
+
+
+let transfer=
+
+getTransfers().find(
+
+item=>
+
+item.name===transferName
+
+);
+
+
+
+let transferPrice=
+
+transfer
+
+?
+
+Number(
+transfer.price
+)
+
+:
+
+0;
+
+
+
+let final=
+
+hotelTotal+
+
+transferPrice;
+
+
+
+document.getElementById(
+"total"
+).innerText=
+
+final.toLocaleString()
+
++
+
+" SAR";
+
+
+
+document.getElementById(
+"breakdown"
+).innerText=
+
+price
+
++
+
+" SAR × "
+
++
+
+roomCount
+
++
+
+" room × "
+
++
+
+nights
+
++
+
+" nights + transfer "
+
++
+
+transferPrice
+
++
+
+" SAR";
+
+}
+
+
+
+document
+.querySelectorAll(
+"input,select"
+)
+.forEach(
+
+function(element){
+
+element.addEventListener(
+"change",
+calculate
+);
+
+element.addEventListener(
+"input",
+calculate
+);
+
+}
+
+);
+
+
+
+document.getElementById(
+"transfer"
+)
+.onchange=
+
+calculate;
+
+
+
+/* SEND BOOKING */
+
+
+async function sendBooking(){
+
+
+let name=
+
+document.getElementById(
+"name"
+).value.trim();
+
+
+let passport=
+
+document.getElementById(
+"passport"
+).value.trim();
+
+
+let phone=
+
+document.getElementById(
+"phone"
+).value.trim();
+
+
+let email=
+
+document.getElementById(
+"email"
+).value.trim();
+
+
+
+if(
+
+!name||
+
+!passport||
+
+!phone||
+
+!email
+
+){
+
+alert(
+
+"Please fill in Name, Passport Number, Phone and Email."
+
+);
+
 return;
+
 }
+
+
 
 let booking={
+
+
 id:Date.now(),
-date:new Date().toLocaleString(),
-name,
-phone,
-email,
-nationality:document.getElementById("nationality").value,
-service:document.getElementById("service").value,
-destination:destination.value,
-hotel:hotel.value,
-room:room.value,
-rooms:document.getElementById("rooms").value,
-adults:document.getElementById("adults").value,
-children:document.getElementById("children").value,
-checkin:document.getElementById("checkin").value,
-checkout:document.getElementById("checkout").value,
-meal:document.getElementById("meal").value,
-transfer:document.getElementById("transfer").value,
-requests:document.getElementById("requests").value,
-total:document.getElementById("total").innerText,
-status:"New"
+
+
+date:
+new Date()
+.toLocaleString(),
+
+
+name:name,
+
+
+passport:passport,
+
+
+phone:phone,
+
+
+email:email,
+
+
+nationality:
+
+document.getElementById(
+"nationality"
+).value,
+
+
+service:
+
+document.getElementById(
+"service"
+).value,
+
+
+destination:
+
+destination.value,
+
+
+hotel:
+
+hotel.value,
+
+
+room:
+
+room.value,
+
+
+rooms:
+
+document.getElementById(
+"rooms"
+).value,
+
+
+adults:
+
+document.getElementById(
+"adults"
+).value,
+
+
+children:
+
+document.getElementById(
+"children"
+).value,
+
+
+checkin:
+
+document.getElementById(
+"checkin"
+).value,
+
+
+checkout:
+
+document.getElementById(
+"checkout"
+).value,
+
+
+meal:
+
+document.getElementById(
+"meal"
+).value,
+
+
+transfer:
+
+document.getElementById(
+"transfer"
+).value,
+
+
+requests:
+
+document.getElementById(
+"requests"
+).value,
+
+
+total:
+
+document.getElementById(
+"total"
+).innerText,
+
+
+status:
+"New"
+
 };
 
-let b=getBookings();
 
-b.unshift(booking);
 
-saveBookings(b);
+let bookings=
+getBookings();
 
-fetch(
+
+bookings.unshift(
+booking
+);
+
+
+saveBookings(
+bookings
+);
+
+
+
+/* SEND TO CLOUDFLARE WORKER */
+
+try{
+
+
+await fetch(
+
 "https://al-fakhama-booking.alfakhama-travel-uzb.workers.dev/",
+
 {
+
 method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify(booking)
+
+headers:{
+
+"Content-Type":
+"application/json"
+
+},
+
+body:
+
+JSON.stringify(
+booking
+)
+
 }
-).catch(()=>{});
 
-document.getElementById("success").style.display="block";
+);
 
-window.scrollTo({
-top:document.getElementById("success").offsetTop,
-behavior:"smooth"
+
+}catch(error){
+
+console.log(
+"Worker error",
+error
+);
+
+}
+
+
+
+document.getElementById(
+"success"
+).style.display=
+
+"block";
+
+
+
+document.getElementById(
+"success"
+).scrollIntoView({
+
+behavior:
+"smooth"
+
 });
 
+
 }
+
+
+
+/* ADMIN LOGIN */
+
 
 function openAdmin(){
 
-let p=prompt("Admin Password:");
+let password=
 
-if(p==="ALFAKHAMA2026"){
+prompt(
+"Admin Password:"
+);
 
-document.getElementById("bookingPage").style.display="none";
 
-document.getElementById("adminPage").style.display="block";
+if(
+
+password===
+
+"ALFAKHAMA2026"
+
+){
+
+document.getElementById(
+"bookingPage"
+).style.display=
+
+"none";
+
+
+document.getElementById(
+"adminPage"
+).style.display=
+
+"block";
+
 
 renderBookings();
+
 renderHotels();
+
 renderTransfers();
 
-}else if(p!==null){
-
-alert("Wrong password.");
-
 }
 
 }
 
-function closeAdmin(){
 
-document.getElementById("adminPage").style.display="none";
 
-document.getElementById("bookingPage").style.display="block";
+/* ADMIN LOGOUT */
+
+
+function logoutAdmin(){
+
+document.getElementById(
+"adminPage"
+).style.display=
+
+"none";
+
+
+document.getElementById(
+"bookingPage"
+).style.display=
+
+"block";
 
 }
 
-function tab(id,btn){
 
-document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
 
-document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("active"));
+/* ADMIN TAB */
 
-document.getElementById(id).classList.add("active");
 
-btn.classList.add("active");
+function tab(
+id,
+button
+){
+
+
+document
+
+.querySelectorAll(
+".panel"
+)
+
+.forEach(
+
+element=>
+
+element.classList.remove(
+"active"
+)
+
+);
+
+
+
+document
+
+.querySelectorAll(
+".tabs button"
+)
+
+.forEach(
+
+element=>
+
+element.classList.remove(
+"active"
+)
+
+);
+
+
+
+document.getElementById(
+id
+).classList.add(
+"active"
+);
+
+
+button.classList.add(
+"active"
+);
 
 }
+
+
+
+/* RENDER BOOKINGS */
+
 
 function renderBookings(){
 
-let list=document.getElementById("bookingList");
 
-let search=document.getElementById("search").value.toLowerCase();
+let list=
 
-let data=getBookings();
-
-let filtered=data.filter(x=>
-(x.name||"").toLowerCase().includes(search)||
-(x.phone||"").toLowerCase().includes(search)||
-(x.hotel||"").toLowerCase().includes(search)
+document.getElementById(
+"bookingList"
 );
 
-document.getElementById("statAll").innerText=data.length;
 
-document.getElementById("statNew").innerText=data.filter(x=>x.status==="New").length;
+let search=
 
-document.getElementById("statConfirmed").innerText=data.filter(x=>x.status==="Confirmed").length;
+(
 
-document.getElementById("statCancelled").innerText=data.filter(x=>x.status==="Cancelled").length;
+document.getElementById(
+"search"
+).value
 
-list.innerHTML=filtered.map(x=>`
+||
+
+""
+
+).toLowerCase();
+
+
+
+let data=
+getBookings();
+
+
+
+let filtered=
+
+data.filter(
+
+item=>
+
+
+(
+
+item.name||
+
+""
+
+)
+
+.toLowerCase()
+
+.includes(search)
+
+
+||
+
+
+(
+
+item.passport||
+
+""
+
+)
+
+.toLowerCase()
+
+.includes(search)
+
+
+||
+
+
+(
+
+item.phone||
+
+""
+
+)
+
+.toLowerCase()
+
+.includes(search)
+
+
+||
+
+
+(
+
+item.hotel||
+
+""
+
+)
+
+.toLowerCase()
+
+.includes(search)
+
+);
+
+
+
+document.getElementById(
+"statAll"
+).innerText=
+
+data.length;
+
+
+
+document.getElementById(
+"statNew"
+).innerText=
+
+data.filter(
+
+item=>
+
+item.status==="New"
+
+).length;
+
+
+
+document.getElementById(
+"statConfirmed"
+).innerText=
+
+data.filter(
+
+item=>
+
+item.status==="Confirmed"
+
+).length;
+
+
+
+document.getElementById(
+"statCancelled"
+).innerText=
+
+data.filter(
+
+item=>
+
+item.status==="Cancelled"
+
+).length;
+
+
+
+if(!filtered.length){
+
+list.innerHTML=
+
+"<p>No bookings found.</p>";
+
+return;
+
+}
+
+
+
+list.innerHTML=
+
+filtered.map(
+
+function(x){
+
+return `
 
 <div class="item">
 
 <div class="itemHead">
 
-<h3>${x.name}</h3>
+<h3>
+${escapeHtml(x.name)}
+</h3>
 
-<span class="badge ${x.status.toLowerCase()}">${x.status}</span>
+<span class="badge ${x.status.toLowerCase()}">
+
+${x.status}
+
+</span>
 
 </div>
 
+
 <p>
-<strong>Phone:</strong> ${x.phone}<br>
-<strong>Email:</strong> ${x.email}<br>
-<strong>Hotel:</strong> ${x.hotel}<br>
-<strong>Destination:</strong> ${x.destination}<br>
-<strong>Room:</strong> ${x.room} | ${x.rooms} room(s)<br>
-<strong>Dates:</strong> ${x.checkin} → ${x.checkout}<br>
-<strong>Transfer:</strong> ${x.transfer||"No Transfer"}<br>
-<strong>Total:</strong> ${x.total}<br>
-<strong>Received:</strong> ${x.date}
+
+<strong>Passport:</strong>
+
+${escapeHtml(x.passport)}
+
+<br>
+
+
+<strong>Phone:</strong>
+
+${escapeHtml(x.phone)}
+
+<br>
+
+
+<strong>Email:</strong>
+
+${escapeHtml(x.email)}
+
+<br>
+
+
+<strong>Nationality:</strong>
+
+${escapeHtml(x.nationality)}
+
+<br>
+
+
+<strong>Hotel:</strong>
+
+${escapeHtml(x.hotel)}
+
+<br>
+
+
+<strong>Destination:</strong>
+
+${escapeHtml(x.destination)}
+
+<br>
+
+
+<strong>Room:</strong>
+
+${escapeHtml(x.room)}
+
+|
+
+${escapeHtml(x.rooms)}
+
+room(s)
+
+<br>
+
+
+<strong>Guests:</strong>
+
+${escapeHtml(x.adults)}
+
+Adults /
+
+${escapeHtml(x.children)}
+
+Children
+
+<br>
+
+
+<strong>Dates:</strong>
+
+${escapeHtml(x.checkin)}
+
+→
+
+${escapeHtml(x.checkout)}
+
+<br>
+
+
+<strong>Meal:</strong>
+
+${escapeHtml(x.meal)}
+
+<br>
+
+
+<strong>Transfer:</strong>
+
+${escapeHtml(x.transfer||"No Transfer")}
+
+<br>
+
+
+<strong>Total:</strong>
+
+${escapeHtml(x.total)}
+
+<br>
+
+
+<strong>Received:</strong>
+
+${escapeHtml(x.date)}
+
+<br>
+
+
+<strong>Requests:</strong>
+
+${escapeHtml(x.requests)}
+
 </p>
+
+
 
 <div class="actions">
 
-<button class="confirm" onclick="statusBooking(${x.id},'Confirmed')">
+
+<button
+
+class="confirm"
+
+onclick=
+
+"statusBooking(${x.id},'Confirmed')"
+
+>
+
 CONFIRM
+
 </button>
 
-<button class="cancel" onclick="statusBooking(${x.id},'Cancelled')">
+
+
+<button
+
+class="cancel"
+
+onclick=
+
+"statusBooking(${x.id},'Cancelled')"
+
+>
+
 CANCEL
+
 </button>
 
-<button class="delete" onclick="deleteBooking(${x.id})">
+
+
+<button
+
+class="delete"
+
+onclick=
+
+"deleteBooking(${x.id})"
+
+>
+
 DELETE
+
 </button>
 
-</div>
 
 </div>
 
-`).join("");
-
-}
-
-function statusBooking(id,status){
-
-let b=getBookings();
-
-b=b.map(x=>{
-
-if(x.id===id)x.status=status;
-
-return x;
-
-});
-
-saveBookings(b);
-
-renderBookings();
-
-}
-
-function deleteBooking(id){
-
-if(!confirm("Delete this booking?"))return;
-
-saveBookings(getBookings().filter(x=>x.id!==id));
-
-renderBookings();
-
-}
-
-function addHotel(){
-
-let name=document.getElementById("newHotelName").value.trim();
-
-let destination=document.getElementById("newHotelDestination").value;
-
-let Double=Number(document.getElementById("newDouble").value);
-
-let Triple=Number(document.getElementById("newTriple").value);
-
-let Quad=Number(document.getElementById("newQuad").value);
-
-if(!name||!Double||!Triple||!Quad){
-
-alert("Please complete all hotel information.");
-
-return;
-
-}
-
-let h=getHotels();
-
-if(!h[destination])h[destination]={};
-
-h[destination][name]={Double,Triple,Quad};
-
-saveHotels(h);
-
-alert("Hotel added successfully.");
-
-document.getElementById("newHotelName").value="";
-
-document.getElementById("newDouble").value="";
-
-document.getElementById("newTriple").value="";
-
-document.getElementById("newQuad").value="";
-
-renderHotels();
-
-loadHotels();
-
-}
-
-function renderHotels(){
-
-let list=document.getElementById("hotelList");
-
-let h=getHotels();
-
-let html="";
-
-Object.keys(h).forEach(d=>{
-
-html+="<h3>"+d+"</h3>";
-
-Object.keys(h[d]).forEach(name=>{
-
-let x=h[d][name];
-
-html+=`
-
-<div class="item">
-
-<strong>${name}</strong>
-
-<p>
-🍳 Breakfast Included<br>
-Double: ${x.Double} SAR |
-Triple: ${x.Triple} SAR |
-Quad: ${x.Quad} SAR
-</p>
-
-<div class="actions">
-
-<button class="delete" onclick="deleteHotel('${d}','${name.replace(/'/g,"\\'")}')">
-DELETE HOTEL
-</button>
-
-</div>
 
 </div>
 
 `;
 
-});
+}
 
-});
-
-list.innerHTML=html;
+).join("");
 
 }
 
-function deleteHotel(destination,name){
 
-if(!confirm("Delete hotel?"))return;
 
-let h=getHotels();
+/* STATUS */
 
-delete h[destination][name];
 
-saveHotels(h);
+function statusBooking(
+id,
+status
+){
 
-renderHotels();
 
-loadHotels();
+let data=
+getBookings();
+
+
+data=
+
+data.map(
+
+function(item){
+
+if(
+
+item.id===id
+
+){
+
+item.status=
+status;
 
 }
 
-function addTransfer(){
+return item;
 
-let name=document.getElementById("newTransferName").value.trim();
+}
 
-let price=Number(document.getElementById("newTransferPrice").value)||0;
+);
 
-if(!name){
 
-alert("Enter vehicle name.");
+saveBookings(
+data
+);
+
+
+renderBookings();
+
+}
+
+
+
+/* DELETE BOOKING */
+
+
+function deleteBooking(
+id
+){
+
+
+if(
+
+!confirm(
+"Delete this booking?"
+)
+
+)return;
+
+
+saveBookings(
+
+getBookings()
+
+.filter(
+
+item=>
+
+item.id!==id
+
+)
+
+);
+
+
+renderBookings();
+
+}
+
+
+
+/* ADD HOTEL */
+
+
+function addHotel(){
+
+
+let name=
+
+document.getElementById(
+"newHotelName"
+).value.trim();
+
+
+let destination=
+
+document.getElementById(
+"newHotelDestination"
+).value;
+
+
+let Double=
+
+Number(
+
+document.getElementById(
+"newDouble"
+).value
+
+);
+
+
+let Triple=
+
+Number(
+
+document.getElementById(
+"newTriple"
+).value
+
+);
+
+
+let Quad=
+
+Number(
+
+document.getElementById(
+"newQuad"
+).value
+
+);
+
+
+
+if(
+
+!name||
+
+!Double||
+
+!Triple||
+
+!Quad
+
+){
+
+alert(
+"Please complete all hotel information."
+);
 
 return;
 
 }
 
-let t=getTransfers();
 
-t.push({name,price});
 
-saveTransfers(t);
+let hotels=
+getHotels();
 
-document.getElementById("newTransferName").value="";
 
-document.getElementById("newTransferPrice").value="";
 
-renderTransfers();
+if(
 
-loadTransfers();
+!hotels[destination]
 
-alert("Transfer added.");
+){
+
+hotels[destination]={};
 
 }
 
-function renderTransfers(){
 
-let list=document.getElementById("transferList");
 
-list.innerHTML=getTransfers().map((x,i)=>`
+hotels[destination][name]={
+
+Double,
+
+Triple,
+
+Quad
+
+};
+
+
+
+saveHotels(
+hotels
+);
+
+
+
+alert(
+"Hotel added successfully."
+);
+
+
+
+document.getElementById(
+"newHotelName"
+).value="";
+
+
+document.getElementById(
+"newDouble"
+).value="";
+
+
+document.getElementById(
+"newTriple"
+).value="";
+
+
+document.getElementById(
+"newQuad"
+).value="";
+
+
+
+renderHotels();
+
+
+loadHotels();
+
+}
+
+
+
+/* RENDER HOTELS */
+
+
+function renderHotels(){
+
+
+let list=
+
+document.getElementById(
+"hotelList"
+);
+
+
+let hotels=
+getHotels();
+
+
+let html="";
+
+
+
+Object.keys(
+hotels
+)
+
+.forEach(
+
+function(destination){
+
+
+html+=
+
+"<h3>"+
+
+destination+
+
+"</h3>";
+
+
+
+Object.keys(
+
+hotels[destination]
+
+)
+
+.forEach(
+
+function(name){
+
+
+let item=
+
+hotels[destination][name];
+
+
+
+html+=`
 
 <div class="item">
 
-<strong>🚐 ${x.name}</strong>
+<strong>
 
-<p>Price: ${x.price} SAR</p>
+${escapeHtml(name)}
+
+</strong>
+
+
+<p>
+
+🍳 Breakfast Included
+
+<br>
+
+Double:
+
+${item.Double}
+
+SAR
+
+|
+
+Triple:
+
+${item.Triple}
+
+SAR
+
+|
+
+Quad:
+
+${item.Quad}
+
+SAR
+
+</p>
+
+
 
 <div class="actions">
 
-<button class="delete" onclick="deleteTransfer(${i})">
-DELETE
+
+<button
+
+class="delete"
+
+onclick=
+
+"deleteHotel('${escapeAttr(destination)}','${escapeAttr(name)}')"
+
+>
+
+DELETE HOTEL
+
 </button>
 
-</div>
 
 </div>
 
-`).join("");
+
+</div>
+
+`;
 
 }
 
-function deleteTransfer(i){
+);
 
-if(!confirm("Delete transfer vehicle?"))return;
+}
 
-let t=getTransfers();
+);
 
-t.splice(i,1);
 
-saveTransfers(t);
+
+list.innerHTML=
+html;
+
+}
+
+
+
+/* DELETE HOTEL */
+
+
+function deleteHotel(
+destination,
+name
+){
+
+
+if(
+
+!confirm(
+"Delete this hotel?"
+)
+
+)return;
+
+
+let hotels=
+getHotels();
+
+
+delete hotels[destination][name];
+
+
+saveHotels(
+hotels
+);
+
+
+renderHotels();
+
+
+loadHotels();
+
+}
+
+
+
+/* ADD TRANSFER */
+
+
+function addTransfer(){
+
+
+let name=
+
+document.getElementById(
+"newTransferName"
+).value.trim();
+
+
+let price=
+
+Number(
+
+document.getElementById(
+"newTransferPrice"
+).value
+
+)||0;
+
+
+
+if(!name){
+
+alert(
+"Enter vehicle name."
+);
+
+return;
+
+}
+
+
+
+let transfers=
+getTransfers();
+
+
+transfers.push({
+
+name:name,
+
+price:price
+
+});
+
+
+saveTransfers(
+transfers
+);
+
+
+
+document.getElementById(
+"newTransferName"
+).value="";
+
+
+document.getElementById(
+"newTransferPrice"
+).value="";
+
+
 
 renderTransfers();
+
+
+loadTransfers();
+
+
+
+alert(
+"Transfer added successfully."
+);
+
+}
+
+
+
+/* RENDER TRANSFERS */
+
+
+function renderTransfers(){
+
+
+let list=
+
+document.getElementById(
+"transferList"
+);
+
+
+
+list.innerHTML=
+
+getTransfers()
+
+.map(
+
+function(item,index){
+
+return `
+
+<div class="item">
+
+<strong>
+🚐 ${escapeHtml(item.name)}
+</strong>
+
+
+<p>
+
+Transfer Price:
+
+${item.price}
+
+SAR
+
+</p>
+
+
+
+<div class="actions">
+
+
+<button
+
+class="delete"
+
+onclick=
+
+"deleteTransfer(${index})"
+
+>
+
+DELETE
+
+</button>
+
+
+</div>
+
+
+</div>
+
+`;
+
+}
+
+)
+
+.join("");
+
+}
+
+
+
+/* DELETE TRANSFER */
+
+
+function deleteTransfer(
+index
+){
+
+
+if(
+
+!confirm(
+"Delete this transfer?"
+)
+
+)return;
+
+
+let transfers=
+getTransfers();
+
+
+transfers.splice(
+index,
+1
+);
+
+
+saveTransfers(
+transfers
+);
+
+
+renderTransfers();
+
 
 loadTransfers();
 
 }
+
+
+
+/* SECURITY HELPERS */
+
+
+function escapeHtml(text){
+
+return String(
+text||""
+)
+
+.replace(
+/&/g,
+"&amp;"
+)
+
+.replace(
+/</g,
+"&lt;"
+)
+
+.replace(
+/>/g,
+"&gt;"
+)
+
+.replace(
+/"/g,
+"&quot;"
+)
+
+.replace(
+/'/g,
+"&#039;"
+);
+
+}
+
+
+
+function escapeAttr(text){
+
+return String(
+text||""
+)
+
+.replace(
+/\\/g,
+"\\\\"
+)
+
+.replace(
+/'/g,
+"\\'"
+);
+
+}
+
+
+
+/* HIDDEN ADMIN URL */
+
+if(
+
+new URLSearchParams(
+window.location.search
+).get("admin")
+
+===
+
+"true"
+
+){
+
+setTimeout(
+
+function(){
+
+openAdmin();
+
+},
+
+300
+
+);
+
+}
+
+
+
+/* START */
 
 loadTransfers();
 
