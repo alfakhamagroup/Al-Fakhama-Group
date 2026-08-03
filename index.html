@@ -4,194 +4,585 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Al Fakhama Travel</title>
+<title>Al Fakhama Travel | Luxury Hotel Booking</title>
 
 <style>
+*{box-sizing:border-box}
 
-body {
+body{
 margin:0;
-font-family:Arial,sans-serif;
-background:#f6f2ea;
-color:#29251f;
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f3ec;
+color:#30291f;
 }
 
-header {
-background:#29251f;
+header{
+background:linear-gradient(135deg,#211c17,#4a3a28);
 color:white;
-text-align:center;
-padding:40px 20px;
+padding:25px 20px;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
-header h1 {
+.nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+.nav button{
+width:auto;
 margin:0;
-font-size:30px;
-}
-
-.container {
-max-width:650px;
-margin:30px auto;
-padding:20px;
-}
-
-.booking {
-background:white;
-padding:25px;
-border-radius:15px;
-}
-
-label {
-display:block;
-margin-top:15px;
+padding:10px 18px;
+background:#c9a45c;
+color:#211c17;
 font-weight:bold;
 }
 
-input,select {
-width:100%;
-padding:12px;
-margin-top:6px;
-border:1px solid #ddd;
-border-radius:8px;
-font-size:16px;
-}
-
-.total {
-margin-top:25px;
-padding:20px;
-background:#f1ede5;
+.hero{
 text-align:center;
-border-radius:10px;
-}
-
-button {
-width:100%;
-padding:15px;
-margin-top:20px;
-background:#29251f;
+padding:65px 20px 45px;
+background:
+linear-gradient(rgba(30,24,18,.72),rgba(30,24,18,.72)),
+linear-gradient(135deg,#a98b5c,#e7d5ae);
 color:white;
-border:none;
-border-radius:8px;
-font-size:16px;
 }
 
-</style>
+.hero h1{
+font-size:42px;
+margin:0 0 12px;
+letter-spacing:2px;
+}
 
+.hero p{
+font-size:17px;
+margin:0;
+}
+
+.container{
+max-width:1050px;
+margin:35px auto;
+padding:0 18px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+padding:30px;
+box-shadow:0 10px 35px rgba(53,40,22,.09);
+margin-bottom:25px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:25px;
+}
+
+.section-title h2{
+margin:0 0 8px;
+font-size:28px;
+}
+
+.section-title p{
+color:#777;
+margin:0;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.field label{
+display:block;
+font-weight:bold;
+font-size:14px;
+margin-bottom:7px;
+}
+
+input,select,textarea{
+width:100%;
+padding:14px;
+border:1px solid #ddd2c1;
+border-radius:10px;
+background:#fffdf9;
+font-size:15px;
+outline:none;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+input:focus,select:focus,textarea:focus{
+border-color:#b89455;
+box-shadow:0 0 0 3px rgba(184,148,85,.12);
+}
+
+.full{
+grid-column:1/-1;
+}
+
+.price-box{
+margin-top:25px;
+padding:25px;
+border-radius:16px;
+background:linear-gradient(135deg,#f4ead8,#fffaf1);
+border:1px solid #e1cda7;
+text-align:center;
+}
+
+.price-box small{
+color:#777;
+}
+
+.price{
+font-size:36px;
+font-weight:bold;
+color:#9a7438;
+margin:8px 0;
+}
+
+.breakdown{
+font-size:14px;
+color:#777;
+}
+
+.primary{
+width:100%;
+padding:17px;
+border:0;
+border-radius:10px;
+background:linear-gradient(135deg,#b99454,#d6b574);
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
+
+.primary:hover{
+opacity:.9;
+}
+
+.hotel-info{
+display:none;
+margin-top:15px;
+padding:15px;
+background:#faf6ee;
+border-radius:10px;
+font-size:14px;
+color:#6c5a40;
+}
+
+.success{
+display:none;
+padding:20px;
+margin-top:20px;
+background:#edf8ef;
+border:1px solid #b7dfbd;
+border-radius:12px;
+color:#286534;
+text-align:center;
+font-weight:bold;
+}
+
+footer{
+background:#211c17;
+color:white;
+text-align:center;
+padding:30px 20px;
+margin-top:50px;
+}
+
+.admin-panel{
+display:none;
+}
+
+.admin-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.admin-top button{
+width:auto;
+margin:0;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:20px;
+}
+
+.stat{
+padding:20px;
+background:#faf6ee;
+border-radius:12px;
+text-align:center;
+}
+
+.stat strong{
+display:block;
+font-size:28px;
+color:#9a7438;
+}
+
+.booking-item{
+border:1px solid #e5ddcf;
+border-radius:14px;
+padding:20px;
+margin-bottom:15px;
+background:#fffdf9;
+}
+
+.booking-head{
+display:flex;
+justify-content:space-between;
+gap:15px;
+align-items:center;
+}
+
+.booking-head h3{
+margin:0;
+}
+
+.status{
+padding:7px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+.new{background:#e9f1ff;color:#285ca8}
+.confirmed{background:#e8f7eb;color:#28753a}
+.cancelled{background:#ffeaea;color:#a32929}
+
+.booking-details{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:15px;
+font-size:14px;
+}
+
+.booking-actions{
+display:flex;
+gap:10px;
+margin-top:15px;
+}
+
+.booking-actions button{
+width:auto;
+margin:0;
+padding:9px 14px;
+border:0;
+border-radius:8px;
+cursor:pointer;
+}
+
+.confirm-btn{background:#dff2e3;color:#276b35}
+.cancel-btn{background:#ffe2e2;color:#9a2525}
+.delete-btn{background:#29251f;color:white}
+
+.search{
+margin-bottom:20px;
+}
+
+@media(max-width:700px){
+
+.nav{
+flex-direction:column;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:auto;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.booking-details{
+grid-template-columns:1fr;
+}
+
+.booking-head{
+align-items:flex-start;
+flex-direction:column;
+}
+
+.card{
+padding:20px;
+}
+
+}
+</style>
 </head>
 
 <body>
 
 <header>
-
-<h1>AL FAKHAMA TRAVEL</h1>
-
-<p>Premium Hotel Booking — Madinah & Makkah</p>
-
+<div class="nav">
+<div class="logo">AL FAKHAMA TRAVEL</div>
+<button onclick="openAdmin()">ADMIN PANEL</button>
+</div>
 </header>
+
+<section class="hero">
+<h1>Luxury Hotel Booking</h1>
+<p>Premium Hotels & Travel Services in Madinah and Makkah</p>
+</section>
 
 <div class="container">
 
-<div class="booking">
+<div id="bookingPage">
 
-<h2>Hotel Booking</h2>
+<div class="card">
 
-<label>Full Name</label>
+<div class="section-title">
+<h2>Request Your Booking</h2>
+<p>Complete the form and our team will contact you shortly.</p>
+</div>
 
-<input type="text" id="name" placeholder="Enter your full name">
+<div class="grid">
 
-<label>Phone Number</label>
+<div class="field">
+<label>Full Name *</label>
+<input id="name" type="text" placeholder="Enter your full name">
+</div>
 
-<input type="tel" id="phone" placeholder="Enter your phone number">
+<div class="field">
+<label>WhatsApp / Phone *</label>
+<input id="phone" type="tel" placeholder="+966 5XXXXXXXX">
+</div>
 
-<label>Email</label>
+<div class="field">
+<label>Email *</label>
+<input id="email" type="email" placeholder="your@email.com">
+</div>
 
-<input type="email" id="email" placeholder="Enter your email">
+<div class="field">
+<label>Nationality</label>
+<input id="nationality" type="text" placeholder="Uzbekistan">
+</div>
 
-<label>Destination</label>
+<div class="field">
+<label>Service Type</label>
+<select id="service">
+<option>Hotel Booking</option>
+<option>Umrah Package</option>
+<option>Hajj Service</option>
+<option>Hotel + Transfer</option>
+<option>Transfer Only</option>
+</select>
+</div>
 
+<div class="field">
+<label>Destination *</label>
 <select id="destination">
-
 <option value="">Select Destination</option>
-
 <option value="Madinah">Madinah</option>
-
 <option value="Makkah">Makkah</option>
-
 </select>
+</div>
 
-<label>Hotel</label>
-
+<div class="field">
+<label>Hotel *</label>
 <select id="hotel">
-
 <option value="">Select Hotel</option>
-
 </select>
+</div>
 
-<label>Room Type</label>
-
+<div class="field">
+<label>Room Type *</label>
 <select id="room">
-
 <option value="Double">Double Room</option>
-
 <option value="Triple">Triple Room</option>
-
 <option value="Quad">Quad Room</option>
-
 </select>
+</div>
 
+<div class="field">
 <label>Number of Rooms</label>
+<input id="rooms" type="number" min="1" value="1">
+</div>
 
-<input type="number" id="rooms" value="1" min="1">
+<div class="field">
+<label>Adults</label>
+<input id="adults" type="number" min="1" value="2">
+</div>
 
-<label>Check-in</label>
+<div class="field">
+<label>Children</label>
+<input id="children" type="number" min="0" value="0">
+</div>
 
-<input type="date" id="checkin">
+<div class="field">
+<label>Check-in *</label>
+<input id="checkin" type="date">
+</div>
 
-<label>Check-out</label>
+<div class="field">
+<label>Check-out *</label>
+<input id="checkout" type="date">
+</div>
 
-<input type="date" id="checkout">
+<div class="field">
+<label>Meal Plan</label>
+<select id="meal">
+<option>Room Only</option>
+<option>Breakfast</option>
+<option>Half Board</option>
+<option>Full Board</option>
+</select>
+</div>
 
-<div class="total">
+<div class="field">
+<label>Transfer</label>
+<select id="transfer">
+<option>Not Required</option>
+<option>Airport Transfer</option>
+<option>Hotel Transfer</option>
+<option>Private Luxury Transfer</option>
+</select>
+</div>
 
-Total Price
-
-<h2 id="total">0 SAR</h2>
+<div class="field full">
+<label>Special Requests</label>
+<textarea id="requests" placeholder="Write any special requests..."></textarea>
+</div>
 
 </div>
 
-<button onclick="sendBooking()">
+<div id="hotelInfo" class="hotel-info"></div>
 
+<div class="price-box">
+
+<small>ESTIMATED TOTAL PRICE</small>
+
+<div class="price" id="total">0 SAR</div>
+
+<div class="breakdown" id="breakdown">
+Select hotel and dates to calculate your price.
+</div>
+
+</div>
+
+<button class="primary" onclick="sendBooking()">
 REQUEST BOOKING
-
 </button>
 
+<div id="success" class="success">
+✓ Your booking request has been received successfully.
+<br>
+Our team will contact you shortly.
 </div>
 
 </div>
+
+</div>
+
+<div id="adminPage" class="admin-panel">
+
+<div class="card">
+
+<div class="admin-top">
+<div>
+<h2>Admin Dashboard</h2>
+<p>Al Fakhama Travel Booking Management</p>
+</div>
+
+<button class="primary" onclick="closeAdmin()">
+BACK TO BOOKING
+</button>
+</div>
+
+<div class="stats">
+<div class="stat">
+<strong id="totalBookings">0</strong>
+Total Bookings
+</div>
+
+<div class="stat">
+<strong id="newBookings">0</strong>
+New
+</div>
+
+<div class="stat">
+<strong id="confirmedBookings">0</strong>
+Confirmed
+</div>
+</div>
+
+<div class="search">
+<input id="searchBooking" placeholder="Search by name, phone or hotel..." oninput="renderBookings()">
+</div>
+
+<div id="bookingsList"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<strong>AL FAKHAMA TRAVEL</strong>
+<p>Premium Hotel Booking & Travel Services</p>
+<p>Madinah • Makkah • Saudi Arabia</p>
+</footer>
 
 <script>
 
 const hotels = {
 
-Madinah: {
+Madinah:{
 
-"Maien Taiba Hotel": {
+"Maien Taiba Hotel":{
 Double:500,
 Triple:560,
 Quad:620
 },
 
-"Valy Al Madinah Hotel": {
+"Valy Al Madinah Hotel":{
 Double:490,
 Triple:550,
 Quad:610
 },
 
-"View Al Madinah Hotel": {
+"View Al Madinah Hotel":{
 Double:520,
 Triple:580,
 Quad:640
 },
 
-"GEWAR AL ANDALUS": {
+"GEWAR AL ANDALUS":{
 Double:500,
 Triple:550,
 Quad:600
@@ -199,15 +590,15 @@ Quad:600
 
 },
 
-Makkah: {
+Makkah:{
 
-"Anjum Hotel Makkah": {
+"Anjum Hotel Makkah":{
 Double:580,
 Triple:680,
 Quad:780
 },
 
-"Movinpik Makkah": {
+"Movinpik Makkah":{
 Double:650,
 Triple:775,
 Quad:900
@@ -217,45 +608,29 @@ Quad:900
 
 };
 
-const destination =
-document.getElementById("destination");
-
-const hotel =
-document.getElementById("hotel");
-
-const room =
-document.getElementById("room");
-
-const rooms =
-document.getElementById("rooms");
-
-const checkin =
-document.getElementById("checkin");
-
-const checkout =
-document.getElementById("checkout");
-
-const total =
-document.getElementById("total");
-
+const destination=document.getElementById("destination");
+const hotel=document.getElementById("hotel");
+const room=document.getElementById("room");
+const rooms=document.getElementById("rooms");
+const checkin=document.getElementById("checkin");
+const checkout=document.getElementById("checkout");
+const total=document.getElementById("total");
+const breakdown=document.getElementById("breakdown");
+const hotelInfo=document.getElementById("hotelInfo");
 
 destination.addEventListener("change",function(){
 
-hotel.innerHTML =
-'<option value="">Select Hotel</option>';
+hotel.innerHTML='<option value="">Select Hotel</option>';
 
-let selected =
-destination.value;
+const selected=destination.value;
 
 if(hotels[selected]){
 
-Object.keys(hotels[selected]).forEach(function(name){
+Object.keys(hotels[selected]).forEach(name=>{
 
-let option =
-document.createElement("option");
+const option=document.createElement("option");
 
 option.value=name;
-
 option.textContent=name;
 
 hotel.appendChild(option);
@@ -268,76 +643,91 @@ calculate();
 
 });
 
+hotel.addEventListener("change",calculate);
+room.addEventListener("change",calculate);
+rooms.addEventListener("input",calculate);
+checkin.addEventListener("change",calculate);
+checkout.addEventListener("change",calculate);
 
 function calculate(){
 
-let d =
-destination.value;
+const d=destination.value;
+const h=hotel.value;
+const r=room.value;
 
-let h =
-hotel.value;
-
-let r =
-room.value;
-
-let roomCount =
-parseInt(rooms.value)||1;
+const roomCount=parseInt(rooms.value)||1;
 
 let nights=0;
 
 if(checkin.value && checkout.value){
 
-let start =
-new Date(checkin.value);
+const start=new Date(checkin.value);
+const end=new Date(checkout.value);
 
-let end =
-new Date(checkout.value);
-
-nights =
-Math.round((end-start)/86400000);
+nights=Math.round((end-start)/86400000);
 
 }
 
 let price=0;
 
-if(
-hotels[d] &&
-hotels[d][h] &&
-hotels[d][h][r]
-){
+if(hotels[d] && hotels[d][h] && hotels[d][h][r]){
 
-price =
-hotels[d][h][r];
+price=hotels[d][h][r];
 
 }
 
-let finalTotal =
-price*roomCount*nights;
+const finalTotal=price*roomCount*nights;
 
-total.innerText =
-finalTotal.toLocaleString()+" SAR";
+total.innerText=finalTotal.toLocaleString()+" SAR";
+
+if(price && nights>0){
+
+breakdown.innerText=
+price.toLocaleString()+" SAR / night × "+
+roomCount+" room(s) × "+
+nights+" night(s)";
+
+hotelInfo.style.display="block";
+
+hotelInfo.innerHTML=
+"<strong>"+h+"</strong><br>"+
+"Double: "+hotels[d][h].Double+" SAR | "+
+"Triple: "+hotels[d][h].Triple+" SAR | "+
+"Quad: "+hotels[d][h].Quad+" SAR";
+
+}else{
+
+breakdown.innerText=
+"Select hotel and valid check-in / check-out dates.";
+
+hotelInfo.style.display="none";
 
 }
 
+}
 
-hotel.addEventListener("change",calculate);
+function getBookings(){
 
-room.addEventListener("change",calculate);
+return JSON.parse(localStorage.getItem("alfakhamaBookings")||"[]");
 
-rooms.addEventListener("input",calculate);
+}
 
-checkin.addEventListener("change",calculate);
+function saveBookings(data){
 
-checkout.addEventListener("change",calculate);
+localStorage.setItem(
+"alfakhamaBookings",
+JSON.stringify(data)
+);
 
+}
 
 async function sendBooking(){
 
-const name = document.getElementById("name").value;
-const phone = document.getElementById("phone").value;
-const email = document.getElementById("email").value;
+const name=document.getElementById("name").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const email=document.getElementById("email").value.trim();
 
-if(!name || !phone || !email){
+if(!name||!phone||!email){
 
 alert("Please fill in your name, phone number and email.");
 
@@ -345,66 +735,274 @@ return;
 
 }
 
-const booking = {
+if(!destination.value||!hotel.value||!checkin.value||!checkout.value){
 
-name: name,
-phone: phone,
-email: email,
-destination: destination.value,
-hotel: hotel.value,
-room: room.value,
-rooms: rooms.value,
-checkin: checkin.value,
-checkout: checkout.value,
-total: total.innerText
+alert("Please complete destination, hotel and travel dates.");
+
+return;
+
+}
+
+const booking={
+
+id:Date.now(),
+
+date:new Date().toLocaleString(),
+
+name:name,
+
+phone:phone,
+
+email:email,
+
+nationality:document.getElementById("nationality").value,
+
+service:document.getElementById("service").value,
+
+destination:destination.value,
+
+hotel:hotel.value,
+
+room:room.value,
+
+rooms:rooms.value,
+
+adults:document.getElementById("adults").value,
+
+children:document.getElementById("children").value,
+
+checkin:checkin.value,
+
+checkout:checkout.value,
+
+meal:document.getElementById("meal").value,
+
+transfer:document.getElementById("transfer").value,
+
+requests:document.getElementById("requests").value,
+
+total:total.innerText,
+
+status:"New"
 
 };
 
-try {
+const bookings=getBookings();
 
-const response = await fetch(
+bookings.unshift(booking);
+
+saveBookings(bookings);
+
+try{
+
+await fetch(
 "https://al-fakhama-booking.alfakhama-travel-uzb.workers.dev/",
 {
 
-method: "POST",
+method:"POST",
 
-headers: {
-"Content-Type": "application/json"
+headers:{
+"Content-Type":"application/json"
 },
 
-body: JSON.stringify(booking)
+body:JSON.stringify(booking)
 
 }
 );
 
-if(response.ok){
+}catch(error){
 
-alert(
-"Thank you " +
-name +
-"! Your booking has been sent successfully."
-);
-
-}else{
-
-alert(
-"Sorry, booking could not be sent."
-);
+console.log("Worker connection error",error);
 
 }
 
-} catch(error){
+document.getElementById("success").style.display="block";
 
-alert(
-"Connection error. Please try again."
+window.scrollTo({
+top:document.getElementById("success").offsetTop,
+behavior:"smooth"
+});
+
+}
+
+function openAdmin(){
+
+const password=prompt("Enter Admin Password:");
+
+if(password==="ALFAKHAMA2026"){
+
+document.getElementById("bookingPage").style.display="none";
+
+document.getElementById("adminPage").style.display="block";
+
+renderBookings();
+
+window.scrollTo(0,0);
+
+}else if(password!==null){
+
+alert("Incorrect password.");
+
+}
+
+}
+
+function closeAdmin(){
+
+document.getElementById("adminPage").style.display="none";
+
+document.getElementById("bookingPage").style.display="block";
+
+}
+
+function renderBookings(){
+
+const list=document.getElementById("bookingsList");
+
+const search=document
+.getElementById("searchBooking")
+.value
+.toLowerCase();
+
+let bookings=getBookings();
+
+const filtered=bookings.filter(b=>
+
+(b.name||"").toLowerCase().includes(search)||
+(b.phone||"").toLowerCase().includes(search)||
+(b.hotel||"").toLowerCase().includes(search)
+
 );
 
-}
+document.getElementById("totalBookings").innerText=bookings.length;
+
+document.getElementById("newBookings").innerText=
+bookings.filter(b=>b.status==="New").length;
+
+document.getElementById("confirmedBookings").innerText=
+bookings.filter(b=>b.status==="Confirmed").length;
+
+if(!filtered.length){
+
+list.innerHTML=
+"<p style='text-align:center;color:#777'>No bookings found.</p>";
+
+return;
 
 }
-  
+
+list.innerHTML=filtered.map(b=>`
+
+<div class="booking-item">
+
+<div class="booking-head">
+
+<h3>${escapeHtml(b.name)}</h3>
+
+<span class="status ${b.status.toLowerCase()}">
+${b.status}
+</span>
+
+</div>
+
+<div class="booking-details">
+
+<div><strong>Phone:</strong><br>${escapeHtml(b.phone)}</div>
+
+<div><strong>Email:</strong><br>${escapeHtml(b.email)}</div>
+
+<div><strong>Hotel:</strong><br>${escapeHtml(b.hotel)}</div>
+
+<div><strong>Room:</strong><br>${escapeHtml(b.room)}</div>
+
+<div><strong>Rooms:</strong><br>${escapeHtml(b.rooms)}</div>
+
+<div><strong>Guests:</strong><br>${escapeHtml(b.adults)} Adults / ${escapeHtml(b.children)} Children</div>
+
+<div><strong>Check-in:</strong><br>${escapeHtml(b.checkin)}</div>
+
+<div><strong>Check-out:</strong><br>${escapeHtml(b.checkout)}</div>
+
+<div><strong>Total:</strong><br>${escapeHtml(b.total)}</div>
+
+<div><strong>Meal:</strong><br>${escapeHtml(b.meal)}</div>
+
+<div><strong>Transfer:</strong><br>${escapeHtml(b.transfer)}</div>
+
+<div><strong>Received:</strong><br>${escapeHtml(b.date)}</div>
+
+</div>
+
+<div class="booking-actions">
+
+<button class="confirm-btn" onclick="changeStatus(${b.id},'Confirmed')">
+Confirm
+</button>
+
+<button class="cancel-btn" onclick="changeStatus(${b.id},'Cancelled')">
+Cancel
+</button>
+
+<button class="delete-btn" onclick="deleteBooking(${b.id})">
+Delete
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+function changeStatus(id,status){
+
+let bookings=getBookings();
+
+bookings=bookings.map(b=>{
+
+if(b.id===id){
+
+b.status=status;
+
+}
+
+return b;
+
+});
+
+saveBookings(bookings);
+
+renderBookings();
+
+}
+
+function deleteBooking(id){
+
+if(!confirm("Delete this booking?"))return;
+
+let bookings=getBookings();
+
+bookings=bookings.filter(b=>b.id!==id);
+
+saveBookings(bookings);
+
+renderBookings();
+
+}
+
+function escapeHtml(text){
+
+return String(text||"")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
 </script>
 
 </body>
-
 </html>
