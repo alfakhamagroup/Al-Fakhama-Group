@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Al Fakhama Admin Panel</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f7f2e9;
+color:#30271c;
+}
+
+header{
+background:linear-gradient(135deg,#201a13,#6b5433);
+color:white;
+padding:22px;
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+.container{
+max-width:1150px;
+margin:35px auto;
+padding:0 18px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+button{
+border:0;
+border-radius:10px;
+padding:13px 18px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.tabs button{
+background:#eee4d4;
+color:#5a4527;
+}
+
+.tabs button.active{
+background:#b48c4e;
+color:white;
+}
+
+.primary{
+background:linear-gradient(135deg,#b28a4b,#d7b873);
+color:white;
+}
+
+.delete{
+background:#29231c;
+color:white;
+}
+
+.confirm{
+background:#dff1e3;
+color:#286b37;
+}
+
+.cancel{
+background:#ffe2e2;
+color:#a12828;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+input,select{
+width:100%;
+padding:14px;
+border:1px solid #dfd2bd;
+border-radius:10px;
+background:#fffdf9;
+font-size:15px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:25px;
+}
+
+.stat{
+padding:20px;
+background:#faf5ec;
+border-radius:12px;
+text-align:center;
+}
+
+.stat strong{
+display:block;
+font-size:28px;
+color:#9b7439;
+}
+
+.panel{
+display:none;
+}
+
+.panel.active{
+display:block;
+}
+
+.item{
+border:1px solid #e3d9ca;
+padding:20px;
+border-radius:13px;
+margin:12px 0;
+background:#fffdf9;
+}
+
+.actions{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.addBox{
+background:#faf5ec;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.status{
+display:inline-block;
+padding:7px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+background:#e5efff;
+color:#285ca8;
+}
+
+footer{
+background:#201a13;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+@media(max-width:700px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.card{
+padding:20px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+AL FAKHAMA TRAVEL — ADMIN
+</div>
+
+<button onclick="location.href='index.html'">
+BACK TO BOOKING
+</button>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>Al Fakhama Admin Dashboard</h2>
+
+<div class="stats">
+
+<div class="stat">
+<strong id="statAll">0</strong>
+Total Bookings
+</div>
+
+<div class="stat">
+<strong id="statNew">0</strong>
+New
+</div>
+
+<div class="stat">
+<strong id="statConfirmed">0</strong>
+Confirmed
+</div>
+
+<div class="stat">
+<strong id="statCancelled">0</strong>
+Cancelled
+</div>
+
+</div>
+
+
+<div class="tabs">
+
+<button class="active"
+onclick="tab('bookings',this)">
+BOOKINGS
+</button>
+
+<button
+onclick="tab('hotels',this)">
+HOTELS
+</button>
+
+<button
+onclick="tab('transfers',this)">
+TRANSFERS
+</button>
+
+</div>
+
+
+<!-- BOOKINGS -->
+
+<div id="bookings"
+class="panel active">
+
+<input
+id="search"
+placeholder="Search booking..."
+oninput="renderBookings()">
+
+<div id="bookingList"></div>
+
+</div>
+
+
+<!-- HOTELS -->
+
+<div id="hotels"
+class="panel">
+
+<div class="addBox">
+
+<h3>Add / Update Hotel</h3>
+
+<div class="grid">
+
+<input
+id="newHotelName"
+placeholder="Hotel Name">
+
+<select id="newHotelDestination">
+
+<option value="Madinah">
+Madinah
+</option>
+
+<option value="Makkah">
+Makkah
+</option>
+
+</select>
+
+<input
+id="newDouble"
+type="number"
+placeholder="Double SAR">
+
+<input
+id="newTriple"
+type="number"
+placeholder="Triple SAR">
+
+<input
+id="newQuad"
+type="number"
+placeholder="Quad SAR">
+
+<button
+class="primary"
+onclick="saveHotel()">
+
+SAVE HOTEL
+
+</button>
+
+</div>
+
+</div>
+
+<div id="hotelList"></div>
+
+</div>
+
+
+<!-- TRANSFERS -->
+
+<div id="transfers"
+class="panel">
+
+<div class="addBox">
+
+<h3>Transfer Price</h3>
+
+<div class="grid">
+
+<select id="adminRoute">
+
+<option value="">
+Select Route
+</option>
+
+</select>
+
+<select id="adminVehicle">
+
+<option value="">
+Select Vehicle
+</option>
+
+</select>
+
+<input
+id="adminTransferPrice"
+type="number"
+placeholder="Price SAR">
+
+<button
+class="primary"
+onclick="saveTransferPrice()">
+
+SAVE PRICE
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="addBox">
+
+<h3>Vehicle Management</h3>
+
+<div class="grid">
+
+<input
+id="newVehicleName"
+placeholder="Vehicle Name">
+
+<button
+class="primary"
+onclick="addVehicle()">
+
+ADD VEHICLE
+
+</button>
+
+</div>
+
+</div>
+
+<div id="transferList"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<strong>
+AL FAKHAMA TRAVEL
+</strong>
+
+<p>
+Admin Management System
+</p>
+
+<p>
+Madinah, Saudi Arabia
+</p>
+
+</footer>
+
+
+<script>
+
+const API =
+"https://al-fakhama-booking.alfakhama-travel-uzb.workers.dev";
+
+
+let appData={
+hotels:{},
+transfers:{},
+vehicles:[],
+routes:{},
+bookings:[]
+};
+
+
+async function api(url,options={}){
+
+const response =
+await fetch(
+API+url,
+{
+...options,
+headers:{
+"Content-Type":
+"application/json",
+...(options.headers||{})
+}
+}
+);
+
+if(!response.ok){
+
+throw new Error(
+"Server Error "+
+response.status
+);
+
+}
+
+return response.json();
+
+}
+
+
+async function loadAdmin(){
+
+try{
+
+const data =
+await api("/api/data");
+
+appData.hotels =
+data.hotels||{};
+
+appData.transfers =
+data.transfers||{};
+
+appData.vehicles =
+data.vehicles||[];
+
+appData.routes =
+data.routes||{};
+
+
+const bookings =
+await api("/api/bookings");
+
+appData.bookings =
+Array.isArray(bookings)
+?
+bookings
+:
+[];
+
+
+renderBookings();
+
+renderHotels();
+
+renderTransfers();
+
+loadAdminRoutes();
+
+loadAdminVehicles();
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Could not load Admin data."
+);
+
+}
+
+}
+
+
+function tab(id,button){
+
+document
+.querySelectorAll(".panel")
+.forEach(
+x=>x.classList.remove("active")
+);
+
+document
+.querySelectorAll(".tabs button")
+.forEach(
+x=>x.classList.remove("active")
+);
+
+document
+.getElementById(id)
+.classList.add("active");
+
+button.classList.add("active");
+
+}
+
+
+function renderBookings(){
+
+const list =
+document.getElementById(
+"bookingList"
+);
+
+const search =
+(
+document.getElementById(
+"search"
+).value||""
+).toLowerCase();
+
+
+const data =
+appData.bookings||[];
+
+
+const filtered =
+data.filter(x=>
+
+(x.name||"")
+.toLowerCase()
+.includes(search)
+
+||
+
+(x.phone||"")
+.toLowerCase()
+.includes(search)
+
+||
+
+(x.hotel||"")
+.toLowerCase()
+.includes(search)
+
+||
+
+(x.passport||"")
+.toLowerCase()
+.includes(search)
+
+);
+
+
+document.getElementById(
+"statAll"
+).innerText =
+data.length;
+
+
+document.getElementById(
+"statNew"
+).innerText =
+data.filter(
+x=>x.status==="New"
+).length;
+
+
+document.getElementById(
+"statConfirmed"
+).innerText =
+data.filter(
+x=>x.status==="Confirmed"
+).length;
+
+
+document.getElementById(
+"statCancelled"
+).innerText =
+data.filter(
+x=>x.status==="Cancelled"
+).length;
+
+
+if(!filtered.length){
+
+list.innerHTML =
+"<p>No bookings found.</p>";
+
+return;
+
+}
+
+
+list.innerHTML =
+filtered.map(x=>`
+
+<div class="item">
+
+<h3>
+${x.name||"-"}
+</h3>
+
+<span class="status">
+${x.status||"New"}
+</span>
+
+<p>
+
+<strong>Passport:</strong>
+${x.passport||"-"}
+
+<br>
+
+<strong>Phone:</strong>
+${x.phone||"-"}
+
+<br>
+
+<strong>Email:</strong>
+${x.email||"-"}
+
+<br>
+
+<strong>Destination:</strong>
+${x.destination||"-"}
+
+<br>
+
+<strong>Hotel:</strong>
+${x.hotel||"-"}
+
+<br>
+
+<strong>Room:</strong>
+${x.room||"-"}
+
+<br>
+
+<strong>Rooms:</strong>
+${x.rooms||"-"}
+
+<br>
+
+<strong>Dates:</strong>
+${x.checkin||"-"}
+→
+${x.checkout||"-"}
+
+<br>
+
+<strong>Transfer:</strong>
+${x.transferRoute||"No Transfer"}
+
+<br>
+
+<strong>Vehicle:</strong>
+${x.vehicle||"-"}
+
+<br>
+
+<strong>Total:</strong>
+${x.total||"0 SAR"}
+
+</p>
+
+<div class="actions">
+
+<button
+class="confirm"
+onclick="statusBooking(
+'${x.id}',
+'Confirmed'
+)">
+
+CONFIRM
+
+</button>
+
+<button
+class="cancel"
+onclick="statusBooking(
+'${x.id}',
+'Cancelled'
+)">
+
+CANCEL
+
+</button>
+
+<button
+class="delete"
+onclick="deleteBooking(
+'${x.id}'
+)">
+
+DELETE
+
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+async function statusBooking(
+id,
+status
+){
+
+try{
+
+await api(
+"/api/bookings/"+id,
+{
+method:"PUT",
+
+body:
+JSON.stringify({
+status
+})
+
+}
+);
+
+await loadAdmin();
+
+}catch(error){
+
+alert(
+"Could not update booking."
+);
+
+}
+
+}
+
+
+async function deleteBooking(id){
+
+if(
+!confirm(
+"Delete this booking?"
+)
+)return;
+
+
+try{
+
+await api(
+"/api/bookings/"+id,
+{
+method:"DELETE"
+}
+);
+
+await loadAdmin();
+
+}catch(error){
+
+alert(
+"Could not delete booking."
+);
+
+}
+
+}
+
+
+async function saveHotel(){
+
+const name =
+document.getElementById(
+"newHotelName"
+).value.trim();
+
+const destination =
+document.getElementById(
+"newHotelDestination"
+).value;
+
+const Double =
+Number(
+document.getElementById(
+"newDouble"
+).value
+);
+
+const Triple =
+Number(
+document.getElementById(
+"newTriple"
+).value
+);
+
+const Quad =
+Number(
+document.getElementById(
+"newQuad"
+).value
+);
+
+
+if(
+!name||
+Double<0||
+Triple<0||
+Quad<0
+){
+
+alert(
+"Complete hotel information."
+);
+
+return;
+
+}
+
+
+try{
+
+await api(
+"/api/hotels",
+{
+method:"POST",
+
+body:
+JSON.stringify({
+
+destination,
+
+name,
+
+Double,
+
+Triple,
+
+Quad
+
+})
+}
+);
+
+
+alert(
+"Hotel saved successfully."
+);
+
+await loadAdmin();
+
+
+document.getElementById(
+"newHotelName"
+).value="";
+
+document.getElementById(
+"newDouble"
+).value="";
+
+document.getElementById(
+"newTriple"
+).value="";
+
+document.getElementById(
+"newQuad"
+).value="";
+
+
+}catch(error){
+
+alert(
+"Could not save hotel."
+);
+
+}
+
+}
+
+
+function renderHotels(){
+
+const list =
+document.getElementById(
+"hotelList"
+);
+
+let html="";
+
+
+Object.keys(
+appData.hotels||{}
+).forEach(
+destination=>{
+
+html+=
+"<h3>"+
+destination+
+"</h3>";
+
+
+Object.keys(
+appData.hotels[
+destination
+]||{}
+).forEach(
+name=>{
+
+const hotel =
+appData.hotels[
+destination
+][name];
+
+
+html+=`
+
+<div class="item">
+
+<strong>
+${name}
+</strong>
+
+<p>
+
+Double:
+${hotel.Double}
+SAR
+
+<br>
+
+Triple:
+${hotel.Triple}
+SAR
+
+<br>
+
+Quad:
+${hotel.Quad}
+SAR
+
+</p>
+
+<button
+class="delete"
+onclick="deleteHotel(
+'${encodeURIComponent(destination)}',
+'${encodeURIComponent(name)}'
+)">
+
+DELETE HOTEL
+
+</button>
+
+</div>
+
+`;
+
+});
+
+});
+
+
+list.innerHTML =
+html||
+"<p>No hotels found.</p>";
+
+}
+
+
+async function deleteHotel(
+destination,
+name
+){
+
+if(
+!confirm(
+"Delete this hotel?"
+)
+)return;
+
+
+try{
+
+await api(
+"/api/hotels",
+{
+
+method:"DELETE",
+
+body:
+JSON.stringify({
+
+destination:
+decodeURIComponent(
+destination
+),
+
+name:
+decodeURIComponent(
+name
+)
+
+})
+
+}
+);
+
+await loadAdmin();
+
+}catch(error){
+
+alert(
+"Could not delete hotel."
+);
+
+}
+
+}
+
+
+function loadAdminRoutes(){
+
+const select =
+document.getElementById(
+"adminRoute"
+);
+
+select.innerHTML =
+'<option value="">Select Route</option>';
+
+
+const routes =
+Object.values(
+appData.routes||{}
+).flat();
+
+
+[
+...new Set(routes)
+]
+.forEach(route=>{
+
+const option =
+document.createElement(
+"option"
+);
+
+option.value =
+route;
+
+option.textContent =
+route;
+
+select.appendChild(
+option
+);
+
+});
+
+}
+
+
+function loadAdminVehicles(){
+
+const select =
+document.getElementById(
+"adminVehicle"
+);
+
+select.innerHTML =
+'<option value="">Select Vehicle</option>';
+
+
+(
+appData.vehicles||[]
+)
+.forEach(vehicle=>{
+
+const option =
+document.createElement(
+"option"
+);
+
+option.value =
+vehicle;
+
+option.textContent =
+vehicle;
+
+select.appendChild(
+option
+);
+
+});
+
+}
+
+
+async function saveTransferPrice(){
+
+const route =
+document.getElementById(
+"adminRoute"
+).value;
+
+const vehicle =
+document.getElementById(
+"adminVehicle"
+).value;
+
+const price =
+Number(
+document.getElementById(
+"adminTransferPrice"
+).value
+);
+
+
+if(
+!route||
+!vehicle||
+price<0
+){
+
+alert(
+"Select route, vehicle and price."
+);
+
+return;
+
+}
+
+
+try{
+
+await api(
+"/api/transfers",
+{
+
+method:"POST",
+
+body:
+JSON.stringify({
+
+route,
+
+vehicle,
+
+price
+
+})
+
+}
+);
+
+alert(
+"Transfer price saved."
+);
+
+await loadAdmin();
+
+}catch(error){
+
+alert(
+"Could not save transfer price."
+);
+
+}
+
+}
+
+
+async function addVehicle(){
+
+const name =
+document.getElementById(
+"newVehicleName"
+).value.trim();
+
+
+if(!name){
+
+alert(
+"Enter vehicle name."
+);
+
+return;
+
+}
+
+
+try{
+
+await api(
+"/api/vehicles",
+{
+
+method:"POST",
+
+body:
+JSON.stringify({
+name
+})
+
+}
+);
+
+alert(
+"Vehicle added."
+);
+
+document.getElementById(
+"newVehicleName"
+).value="";
+
+await loadAdmin();
+
+}catch(error){
+
+alert(
+"Could not add vehicle. Your Worker may need the /api/vehicles endpoint."
+);
+
+}
+
+}
+
+
+function renderTransfers(){
+
+const list =
+document.getElementById(
+"transferList"
+);
+
+let html="";
+
+
+Object.keys(
+appData.transfers||{}
+).forEach(key=>{
+
+const parts =
+key.split("|");
+
+const route =
+parts[0];
+
+const vehicle =
+parts.slice(1).join("|");
+
+const price =
+appData.transfers[key];
+
+
+html+=`
+
+<div class="item">
+
+<strong>
+${route}
+</strong>
+
+<p>
+
+🚘 Vehicle:
+${vehicle}
+
+<br>
+
+💰 Price:
+${price}
+SAR
+
+</p>
+
+</div>
+
+`;
+
+});
+
+
+list.innerHTML =
+html||
+"<p>No transfer prices set.</p>";
+
+}
+
+
+loadAdmin();
+
+</script>
+
+</body>
+</html>
