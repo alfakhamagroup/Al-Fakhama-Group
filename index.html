@@ -7,218 +7,35 @@
 
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f7f2e9;
-color:#30271c
-}
-
-header{
-background:#201a13;
-color:#fff;
-padding:22px
-}
-
-.logo{
-text-align:center;
-font-size:23px;
-font-weight:bold;
-letter-spacing:2px
-}
-
-.container{
-max-width:1150px;
-margin:auto;
-padding:25px 15px
-}
-
-.card{
-background:#fff;
-padding:25px;
-border-radius:20px;
-margin-bottom:20px;
-box-shadow:0 10px 35px rgba(0,0,0,.08)
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px
-}
-
-.full{
-grid-column:1/-1
-}
-
-label{
-display:block;
-font-weight:bold;
-font-size:14px;
-margin-bottom:7px
-}
-
-input,select,textarea{
-width:100%;
-padding:14px;
-border:1px solid #dfd2bd;
-border-radius:10px;
-background:#fffdf9;
-font-size:15px
-}
-
-textarea{
-min-height:90px
-}
-
-button{
-border:0;
-border-radius:10px;
-padding:13px 18px;
-cursor:pointer;
-font-weight:bold
-}
-
-.primary{
-width:100%;
-background:linear-gradient(135deg,#b28a4b,#d7b873);
-color:#fff;
-font-size:16px
-}
-
-.hidden{
-display:none!important
-}
-
-.option{
-border:1px solid #e3d9ca;
-padding:17px;
-border-radius:12px;
-margin:10px 0;
-cursor:pointer;
-background:#fffdf9;
-overflow:hidden
-}
-
-.option:hover,
-.option.active{
-border:2px solid #b28a4b;
-background:#faf2e3
-}
-
-.optionPrice{
-float:right;
-color:#9a7133;
-font-weight:bold
-}
-
-.pricebox{
-background:#f8f0e1;
-border:1px solid #dfc99e;
-border-radius:15px;
-padding:22px
-}
-
-.total{
-font-size:35px;
-color:#9a7133;
-font-weight:bold;
-text-align:center;
-margin:15px
-}
-
-.summaryRow{
-display:flex;
-justify-content:space-between;
-gap:15px;
-padding:9px 0;
-border-bottom:1px solid #e5dac8
-}
-
-.summaryRow span:last-child{
-font-weight:bold;
-text-align:right
-}
-
-.success{
-display:none;
-background:#e6f5e9;
-color:#286a35;
-padding:15px;
-border-radius:10px;
-margin-top:15px;
-text-align:center
-}
-
-.error{
-display:none;
-background:#ffe8e8;
-color:#a12828;
-padding:15px;
-border-radius:10px;
-margin-top:15px;
-text-align:center
-}
-
-footer{
-background:#201a13;
-color:#fff;
-text-align:center;
-padding:30px;
-margin-top:30px
-}
-
-.contact{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap
-}
-
-.contact a{
-color:#fff;
-text-decoration:none;
-background:#6b5433;
-padding:10px 15px;
-border-radius:10px
-}
-
-.sectionTitle{
-margin-top:0;
-margin-bottom:7px
-}
-
-.sectionDescription{
-color:#766754;
-margin-top:0
-}
-
+body{margin:0;font-family:Arial,sans-serif;background:#f7f2e9;color:#30271c}
+header{background:#201a13;color:#fff;padding:20px}
+.logo{text-align:center;font-size:22px;font-weight:bold;letter-spacing:2px}
+.container{max-width:1150px;margin:auto;padding:25px 15px}
+.card{background:#fff;padding:25px;border-radius:20px;margin-bottom:20px;box-shadow:0 10px 35px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.full{grid-column:1/-1}
+label{display:block;font-weight:bold;font-size:14px;margin-bottom:7px}
+input,select,textarea{width:100%;padding:14px;border:1px solid #dfd2bd;border-radius:10px;background:#fffdf9;font-size:15px}
+textarea{min-height:90px}
+button{border:0;border-radius:10px;padding:13px 18px;cursor:pointer;font-weight:bold}
+.primary{width:100%;background:linear-gradient(135deg,#b28a4b,#d7b873);color:#fff;font-size:16px}
+.hidden{display:none!important}
+.option{border:1px solid #e3d9ca;padding:16px;border-radius:12px;margin:10px 0;cursor:pointer;background:#fffdf9;overflow:hidden}
+.option:hover,.option.active{border:2px solid #b28a4b;background:#faf2e3}
+.optionPrice{float:right;color:#9a7133;font-weight:bold}
+.pricebox{background:#f8f0e1;border:1px solid #dfc99e;border-radius:15px;padding:22px}
+.total{font-size:35px;color:#9a7133;font-weight:bold;text-align:center;margin:10px}
+.success{display:none;background:#e6f5e9;color:#286a35;padding:15px;border-radius:10px;margin-top:15px;text-align:center}
+.error{display:none;background:#ffe2e2;color:#a12828;padding:15px;border-radius:10px;margin-top:15px;text-align:center}
+.summaryRow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e6dccb}
+.summaryRow strong{color:#9a7133}
+footer{background:#201a13;color:#fff;text-align:center;padding:30px;margin-top:30px}
+.contact{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.contact a{color:#fff;text-decoration:none;background:#6b5433;padding:10px 15px;border-radius:10px}
 @media(max-width:700px){
-
-.grid{
-grid-template-columns:1fr
-}
-
-.card{
-padding:18px
-}
-
-.optionPrice{
-float:none;
-display:block;
-margin-top:8px
-}
-
-.total{
-font-size:30px
-}
-
-.summaryRow{
-flex-direction:column;
-gap:3px
-}
-
+.grid{grid-template-columns:1fr}
+.card{padding:18px}
+.optionPrice{float:none;display:block;margin-top:8px}
 }
 </style>
 </head>
@@ -226,30 +43,23 @@ gap:3px
 <body>
 
 <header>
-<div class="logo">
-AL FAKHAMA TRAVEL
-</div>
+<div class="logo">AL FAKHAMA TRAVEL</div>
 </header>
 
 <div class="container">
 
-<!-- ================= BASIC BOOKING ================= -->
+<!-- BASIC BOOKING -->
 
 <div class="card">
 
-<h1>
-Luxury Hotel Booking
-</h1>
+<h1>Luxury Hotel Booking</h1>
 
-<p>
-Premium Hotels & Travel Services — Madinah & Makkah
-</p>
+<p>Premium Hotels & Travel Services — Madinah & Makkah</p>
 
 <div class="grid">
 
 <div>
 <label>Destination *</label>
-
 <select id="destination">
 <option value="">Select Destination</option>
 <option value="Madinah">Madinah</option>
@@ -259,7 +69,6 @@ Premium Hotels & Travel Services — Madinah & Makkah
 
 <div>
 <label>Hotel *</label>
-
 <select id="hotel">
 <option value="">Select Hotel</option>
 </select>
@@ -267,120 +76,74 @@ Premium Hotels & Travel Services — Madinah & Makkah
 
 <div>
 <label>Check-in *</label>
-
-<input
-id="checkin"
-type="date"
->
+<input id="checkin" type="date">
 </div>
 
 <div>
 <label>Check-out *</label>
-
-<input
-id="checkout"
-type="date"
->
+<input id="checkout" type="date">
 </div>
 
 <div>
 <label>Number of Rooms</label>
-
-<input
-id="rooms"
-type="number"
-min="1"
-value="1"
->
+<input id="rooms" type="number" min="1" value="1">
 </div>
 
 <div>
 <label>Meal Plan</label>
-
 <select id="meal">
 <option>Breakfast Included</option>
 </select>
 </div>
 
 </div>
-
 </div>
 
 
-<!-- ================= ROOM TYPES ================= -->
+<!-- ROOM TYPES -->
 
-<div
-id="roomSection"
-class="card hidden"
->
+<div id="roomSection" class="card hidden">
 
-<h2 class="sectionTitle">
-Room Type
-</h2>
+<h2>Room Type</h2>
 
-<p class="sectionDescription">
-Select your preferred room category.
-</p>
+<p>Select your preferred room category.</p>
 
 <div id="roomList"></div>
 
 </div>
 
 
-<!-- ================= ROOM VIEW ================= -->
+<!-- ROOM VIEWS -->
 
-<div
-id="viewSection"
-class="card hidden"
->
+<div id="viewSection" class="card hidden">
 
-<h2 class="sectionTitle">
-Room View
-</h2>
+<h2>Room View</h2>
 
-<p class="sectionDescription">
-Select your preferred room view.
-</p>
+<p>Select your preferred view.</p>
 
 <div id="viewList"></div>
 
 </div>
 
 
-<!-- ================= EXTRA BED ================= -->
+<!-- EXTRA BED + CHILDREN + ADULTS -->
 
-<div
-id="extraSection"
-class="card"
->
+<div class="card">
 
-<h2 class="sectionTitle">
-Extra Bed
-</h2>
-
-<p class="sectionDescription">
-Select extra bed option, then enter children and adults.
-</p>
-
-
-<!-- 1. EXTRA BED -->
+<h2>Extra Bed</h2>
 
 <div id="extraList">
 
-<div
-id="extraBedOption"
+<div id="extraBedOption"
 class="option"
-onclick="toggleExtraBed()"
->
+onclick="toggleExtraBed()">
 
 <strong>
 Extra Bed + Breakfast Included
 </strong>
 
-<span
-id="extraBedPrice"
-class="optionPrice"
->
+<span id="extraBedPrice"
+class="optionPrice">
 Select Hotel
 </span>
 
@@ -389,11 +152,28 @@ Select Hotel
 </div>
 
 
-<!-- 2. CHILDREN -->
+<!-- EXTRA BED QUANTITY -->
 
-<div
-style="margin-top:15px"
->
+<div id="extraQuantityBox" class="hidden"
+style="margin-top:15px">
+
+<label>
+Number of Extra Beds
+</label>
+
+<select id="extraQuantity">
+<option value="1">1 Extra Bed</option>
+<option value="2">2 Extra Beds</option>
+<option value="3">3 Extra Beds</option>
+<option value="4">4 Extra Beds</option>
+</select>
+
+</div>
+
+
+<!-- CHILDREN -->
+
+<div style="margin-top:15px">
 
 <label>
 Children (0–12 years)
@@ -409,11 +189,9 @@ value="0"
 </div>
 
 
-<!-- 3. ADULTS -->
+<!-- ADULTS -->
 
-<div
-style="margin-top:15px"
->
+<div style="margin-top:15px">
 
 <label>
 Adults
@@ -431,13 +209,11 @@ value="2"
 </div>
 
 
-<!-- ================= TRANSFER ================= -->
+<!-- TRANSFER -->
 
 <div class="card">
 
-<h2 class="sectionTitle">
-Transfer
-</h2>
+<h2>Transfer</h2>
 
 <div class="grid">
 
@@ -478,82 +254,68 @@ Select Vehicle
 </div>
 
 
-<!-- ================= GUEST INFORMATION ================= -->
+<!-- GUEST INFORMATION -->
 
 <div class="card">
 
-<h2 class="sectionTitle">
-Guest Information
-</h2>
+<h2>Guest Information</h2>
 
 <div class="grid">
 
 <div>
-<label>
-Full Name *
-</label>
 
-<input
-id="name"
-placeholder="Full Name"
->
+<label>Full Name *</label>
+
+<input id="name">
+
 </div>
 
 <div>
-<label>
-Passport Number *
-</label>
 
-<input
-id="passport"
-placeholder="Passport Number"
->
+<label>Passport Number *</label>
+
+<input id="passport">
+
 </div>
 
 <div>
-<label>
-WhatsApp / Phone *
-</label>
+
+<label>WhatsApp / Phone *</label>
 
 <input
 id="phone"
 placeholder="+966 5XXXXXXXX"
 >
+
 </div>
 
 <div>
-<label>
-Email *
-</label>
+
+<label>Email *</label>
 
 <input
 id="email"
 type="email"
-placeholder="Email"
 >
+
 </div>
 
 <div>
-<label>
-Nationality
-</label>
+
+<label>Nationality</label>
 
 <input
 id="nationality"
 value="Uzbekistan"
 >
+
 </div>
 
 <div class="full">
 
-<label>
-Special Requests
-</label>
+<label>Special Requests</label>
 
-<textarea
-id="requests"
-placeholder="Special requests..."
-></textarea>
+<textarea id="requests"></textarea>
 
 </div>
 
@@ -562,50 +324,36 @@ placeholder="Special requests..."
 </div>
 
 
-<!-- ================= BOOKING SUMMARY ================= -->
+<!-- SUMMARY -->
 
 <div class="card pricebox">
 
-<h2>
-Booking Summary
-</h2>
+<h2>Booking Summary</h2>
 
 <div id="summary">
-
 Please select destination, hotel and dates.
-
 </div>
 
-<div
-class="total"
-id="total"
->
+<div class="total" id="total">
 0 SAR
 </div>
 
 <button
-class="primary"
 id="bookButton"
+class="primary"
 onclick="sendBooking()"
 >
 BOOK NOW
 </button>
 
-<div
-id="success"
-class="success"
->
+<div id="success" class="success">
 ✓ Booking request sent successfully.
 <br>
 Our team will contact you shortly.
 </div>
 
-<div
-id="error"
-class="error"
->
-Booking could not be sent.
-Please try again.
+<div id="error" class="error">
+Booking could not be sent. Please try again.
 </div>
 
 </div>
@@ -615,17 +363,11 @@ Please try again.
 
 <footer>
 
-<strong>
-AL FAKHAMA TRAVEL
-</strong>
+<strong>AL FAKHAMA TRAVEL</strong>
 
-<p>
-Premium Hotel Booking & Travel Services
-</p>
+<p>Premium Hotel Booking & Travel Services</p>
 
-<p>
-📍 Madinah, Saudi Arabia
-</p>
+<p>📍 Madinah, Saudi Arabia</p>
 
 <div class="contact">
 
@@ -654,17 +396,9 @@ target="_blank"
 
 <script>
 
-/* =========================================
-   WORKER API
-========================================= */
-
 const API =
 "https://al-fakhama-booking-new.alfakhama-travel-uzb.workers.dev";
 
-
-/* =========================================
-   DATA
-========================================= */
 
 let DATA={
 hotels:{},
@@ -676,18 +410,15 @@ vehicles:[],
 routes:{}
 };
 
+
 let selectedRoom=null;
 let selectedView=null;
 let selectedExtra=null;
 
 
-/* =========================================
-   API FUNCTION
-========================================= */
-
 async function api(path,options={}){
 
-const response=await fetch(
+const r=await fetch(
 API+path,
 {
 ...options,
@@ -698,20 +429,22 @@ headers:{
 }
 );
 
-const text=await response.text();
+const text=await r.text();
 
 let data;
 
 try{
 data=JSON.parse(text);
-}catch(e){
+}catch{
 throw new Error("Invalid server response");
 }
 
-if(!response.ok){
+if(!r.ok){
+
 throw new Error(
 data.error||"Server Error"
 );
+
 }
 
 return data;
@@ -719,18 +452,14 @@ return data;
 }
 
 
-/* =========================================
-   LOAD DATA
-========================================= */
+/* LOAD DATA */
 
 async function loadData(){
 
 try{
 
-const data=
+DATA=
 await api("/api/data");
-
-DATA=data||{};
 
 DATA.hotels=
 DATA.hotels||{};
@@ -765,12 +494,12 @@ updateExtraBed();
 calculate();
 
 
-}catch(error){
+}catch(e){
 
-console.error(error);
+console.error(e);
 
 alert(
-"Website data could not be loaded. Please check Worker."
+"Could not load booking data."
 );
 
 }
@@ -778,21 +507,18 @@ alert(
 }
 
 
-/* =========================================
-   LOAD HOTELS
-========================================= */
+/* HOTELS */
 
 function loadHotels(){
 
 const destination=
-document.getElementById(
-"destination"
-).value;
+document
+.getElementById("destination")
+.value;
 
 const select=
-document.getElementById(
-"hotel"
-);
+document
+.getElementById("hotel");
 
 select.innerHTML=
 '<option value="">Select Hotel</option>';
@@ -804,14 +530,14 @@ DATA.hotels[destination]||{}
 .forEach(
 hotel=>{
 
-const option=
+const o=
 document.createElement("option");
 
-option.value=hotel;
+o.value=hotel;
 
-option.textContent=hotel;
+o.textContent=hotel;
 
-select.appendChild(option);
+select.appendChild(o);
 
 }
 );
@@ -819,21 +545,18 @@ select.appendChild(option);
 }
 
 
-/* =========================================
-   LOAD ROUTES
-========================================= */
+/* ROUTES */
 
 function loadRoutes(){
 
 const destination=
-document.getElementById(
-"destination"
-).value;
+document
+.getElementById("destination")
+.value;
 
 const select=
-document.getElementById(
-"transferRoute"
-);
+document
+.getElementById("transferRoute");
 
 select.innerHTML=
 '<option value="">No Transfer</option>';
@@ -845,14 +568,14 @@ DATA.routes[destination]||[]
 .forEach(
 route=>{
 
-const option=
+const o=
 document.createElement("option");
 
-option.value=route;
+o.value=route;
 
-option.textContent=route;
+o.textContent=route;
 
-select.appendChild(option);
+select.appendChild(o);
 
 }
 );
@@ -860,16 +583,13 @@ select.appendChild(option);
 }
 
 
-/* =========================================
-   LOAD VEHICLES
-========================================= */
+/* VEHICLES */
 
 function loadVehicles(){
 
 const select=
-document.getElementById(
-"vehicle"
-);
+document
+.getElementById("vehicle");
 
 select.innerHTML=
 '<option value="">Select Vehicle</option>';
@@ -881,14 +601,14 @@ DATA.vehicles||[]
 .forEach(
 vehicle=>{
 
-const option=
+const o=
 document.createElement("option");
 
-option.value=vehicle;
+o.value=vehicle;
 
-option.textContent=vehicle;
+o.textContent=vehicle;
 
-select.appendChild(option);
+select.appendChild(o);
 
 }
 );
@@ -896,9 +616,7 @@ select.appendChild(option);
 }
 
 
-/* =========================================
-   DESTINATION CHANGE
-========================================= */
+/* DESTINATION CHANGE */
 
 document
 .getElementById("destination")
@@ -916,7 +634,13 @@ selectedView=null;
 
 selectedExtra=null;
 
-hideRoomSections();
+document
+.getElementById("roomSection")
+.classList.add("hidden");
+
+document
+.getElementById("viewSection")
+.classList.add("hidden");
 
 updateExtraBed();
 
@@ -926,9 +650,7 @@ calculate();
 );
 
 
-/* =========================================
-   HOTEL CHANGE
-========================================= */
+/* HOTEL CHANGE */
 
 document
 .getElementById("hotel")
@@ -954,53 +676,30 @@ calculate();
 );
 
 
-/* =========================================
-   HIDE ROOM SECTIONS
-========================================= */
-
-function hideRoomSections(){
-
-document
-.getElementById("roomSection")
-.classList.add("hidden");
-
-document
-.getElementById("viewSection")
-.classList.add("hidden");
-
-}
-
-
-/* =========================================
-   ROOM TYPE
-========================================= */
+/* ROOM TYPES */
 
 function loadRoomOptions(){
 
-const destination=
+const d=
 document
 .getElementById("destination")
 .value;
 
-const hotel=
+const h=
 document
 .getElementById("hotel")
 .value;
 
-const key=
-destination+
-"|" +
-hotel;
+const key=d+"|"+h;
+
+const rooms=
+DATA.roomTypes[key]||[];
 
 const list=
 document
 .getElementById("roomList");
 
 list.innerHTML="";
-
-
-const rooms=
-DATA.roomTypes[key]||[];
 
 
 if(!rooms.length){
@@ -1030,11 +729,15 @@ div.className="option";
 
 div.innerHTML=
 "<strong>"+
-escapeHTML(room.name||"Room")+
+room.name+
 "</strong>"+
 '<span class="optionPrice">'+
-Number(room.price||0)
-.toLocaleString()+
+"Double "+
+(room.Double||0)+
+" | Triple "+
+(room.Triple||0)+
+" | Quad "+
+(room.Quad||0)+
 " SAR</span>";
 
 
@@ -1067,36 +770,30 @@ list.appendChild(div);
 }
 
 
-/* =========================================
-   ROOM VIEW
-========================================= */
+/* VIEWS */
 
 function loadViewOptions(){
 
-const destination=
+const d=
 document
 .getElementById("destination")
 .value;
 
-const hotel=
+const h=
 document
 .getElementById("hotel")
 .value;
 
-const key=
-destination+
-"|" +
-hotel;
+const key=d+"|"+h;
+
+const views=
+DATA.views[key]||[];
 
 const list=
 document
 .getElementById("viewList");
 
 list.innerHTML="";
-
-
-const views=
-DATA.views[key]||[];
 
 
 if(!views.length){
@@ -1126,11 +823,10 @@ div.className="option";
 
 div.innerHTML=
 "<strong>"+
-escapeHTML(view.name||"View")+
+view.name+
 "</strong>"+
 '<span class="optionPrice">+'+
-Number(view.price||0)
-.toLocaleString()+
+(view.price||0)+
 " SAR</span>";
 
 
@@ -1163,26 +859,21 @@ list.appendChild(div);
 }
 
 
-/* =========================================
-   EXTRA BED
-========================================= */
+/* EXTRA BED */
 
 function updateExtraBed(){
 
-const destination=
+const d=
 document
 .getElementById("destination")
 .value;
 
-const hotel=
+const h=
 document
 .getElementById("hotel")
 .value;
 
-const key=
-destination+
-"|" +
-hotel;
+const key=d+"|"+h;
 
 const extra=
 DATA.extraBeds[key];
@@ -1190,20 +881,22 @@ DATA.extraBeds[key];
 
 const option=
 document
-.getElementById(
-"extraBedOption"
-);
+.getElementById("extraBedOption");
 
 const price=
 document
-.getElementById(
-"extraBedPrice"
-);
+.getElementById("extraBedPrice");
+
+const quantityBox=
+document
+.getElementById("extraQuantityBox");
 
 
 selectedExtra=null;
 
 option.classList.remove("active");
+
+quantityBox.classList.add("hidden");
 
 
 if(
@@ -1214,11 +907,7 @@ if(
 price.innerText=
 "Not Available";
 
-option.style.opacity=
-"0.5";
-
-option.style.cursor=
-"default";
+option.style.opacity="0.5";
 
 option.onclick=null;
 
@@ -1227,19 +916,15 @@ return;
 }
 
 
-option.style.opacity="1";
+price.innerText=
+"+"+
+(extra.price||0)+
+" SAR / bed";
 
-option.style.cursor="pointer";
+option.style.opacity="1";
 
 option.onclick=
 toggleExtraBed;
-
-
-price.innerText=
-"+"+
-Number(extra.price||0)
-.toLocaleString()+
-" SAR";
 
 
 }
@@ -1247,52 +932,97 @@ Number(extra.price||0)
 
 function toggleExtraBed(){
 
-const destination=
+const d=
 document
 .getElementById("destination")
 .value;
 
-const hotel=
+const h=
 document
 .getElementById("hotel")
 .value;
 
-const key=
-destination+
-"|" +
-hotel;
+const key=d+"|"+h;
 
 const extra=
 DATA.extraBeds[key];
 
 
-if(
-!extra||
-!extra.enabled
-)
+if(!extra||
+!extra.enabled)
 return;
 
 
 const option=
 document
-.getElementById(
-"extraBedOption"
+.getElementById("extraBedOption");
+
+const quantityBox=
+document
+.getElementById("extraQuantityBox");
+
+
+option.classList.toggle("active");
+
+
+if(
+option.classList.contains("active")
+){
+
+selectedExtra=extra;
+
+quantityBox
+.classList
+.remove("hidden");
+
+
+const max=
+Number(
+extra.maxBeds||1
 );
 
 
-option.classList.toggle(
-"active"
-);
+const select=
+document
+.getElementById("extraQuantity");
+
+select.innerHTML="";
 
 
-selectedExtra=
-option.classList.contains(
-"active"
-)
+for(
+let i=1;
+i<=max;
+i++
+){
+
+const o=
+document.createElement("option");
+
+o.value=i;
+
+o.textContent=
+i+
+(i===1
 ?
-extra
+" Extra Bed"
 :
-null;
+" Extra Beds"
+);
+
+select.appendChild(o);
+
+}
+
+
+}else{
+
+selectedExtra=null;
+
+quantityBox
+.classList
+.add("hidden");
+
+}
 
 
 calculate();
@@ -1300,9 +1030,7 @@ calculate();
 }
 
 
-/* =========================================
-   NIGHTS
-========================================= */
+/* NIGHTS */
 
 function getNights(){
 
@@ -1317,37 +1045,24 @@ document
 .value;
 
 
-if(
-!checkin||
-!checkout
-)
+if(!checkin||!checkout)
 return 0;
-
-
-const start=
-new Date(
-checkin+"T00:00:00"
-);
-
-const end=
-new Date(
-checkout+"T00:00:00"
-);
 
 
 return Math.max(
 0,
 Math.round(
-(end-start)/86400000
+(
+new Date(checkout)-
+new Date(checkin)
+)/86400000
 )
 );
 
 }
 
 
-/* =========================================
-   HOTEL OCCUPANCY
-========================================= */
+/* OCCUPANCY */
 
 function getOccupancy(){
 
@@ -1370,18 +1085,16 @@ return "Double";
 }
 
 
-/* =========================================
-   CALCULATE TOTAL
-========================================= */
+/* CALCULATE */
 
 function calculate(){
 
-const destination=
+const d=
 document
 .getElementById("destination")
 .value;
 
-const hotel=
+const h=
 document
 .getElementById("hotel")
 .value;
@@ -1397,52 +1110,35 @@ const nights=
 getNights();
 
 
-const adults=
-Number(
-document
-.getElementById("adults")
-.value
-)||1;
-
 const occupancy=
-adults>=4
-?
-"Quad"
-:
-adults===3
-?
-"Triple"
-:
-"Double";
+getOccupancy();
 
 
 let roomPrice=0;
 
 
-/* ROOM TYPE PRICE */
+/* ROOM TYPE DOUBLE TRIPLE QUAD */
 
 if(selectedRoom){
 
 roomPrice=
 Number(
-selectedRoom.price
+selectedRoom[occupancy]
 )||0;
 
 }
 
 
-/* HOTEL DOUBLE TRIPLE QUAD */
+/* HOTEL DEFAULT DOUBLE TRIPLE QUAD */
 
 else if(
-DATA.hotels?.[destination]?.[hotel]
+DATA.hotels[d] &&
+DATA.hotels[d][h]
 ){
 
 roomPrice=
 Number(
-DATA.hotels
-[destination]
-[hotel]
-[occupancy]
+DATA.hotels[d][h][occupancy]
 )||0;
 
 }
@@ -1466,13 +1162,25 @@ nights
 0;
 
 
+const extraQuantity=
+selectedExtra
+?
+Number(
+document
+.getElementById("extraQuantity")
+.value
+)||1
+:
+0;
+
+
 const extraTotal=
 selectedExtra
 ?
 Number(
 selectedExtra.price||0
 )*
-rooms*
+extraQuantity*
 nights
 :
 0;
@@ -1480,16 +1188,12 @@ nights
 
 const route=
 document
-.getElementById(
-"transferRoute"
-)
+.getElementById("transferRoute")
 .value;
 
 const vehicle=
 document
-.getElementById(
-"vehicle"
-)
+.getElementById("vehicle")
 .value;
 
 
@@ -1501,9 +1205,7 @@ if(route&&vehicle){
 transferTotal=
 Number(
 DATA.transfers[
-route+
-"|" +
-vehicle
+route+"|"+vehicle
 ]
 )||0;
 
@@ -1528,46 +1230,46 @@ document
 .getElementById("summary")
 .innerHTML=
 
-row(
+summaryRow(
 "Hotel",
-hotel||"-"
+h||"-"
 )+
 
-row(
+summaryRow(
 "Room Type",
 selectedRoom?.name||
 occupancy
 )+
 
-row(
+summaryRow(
 "Rooms",
 rooms
 )+
 
-row(
+summaryRow(
 "Nights",
 nights
 )+
 
-row(
-"Room Price",
+summaryRow(
+"Room Total",
 roomTotal.toLocaleString()+
 " SAR"
 )+
 
-row(
-"Room View",
+summaryRow(
+"View",
 selectedView?.name||
 "No View"
 )+
 
-row(
-"View Price",
+summaryRow(
+"View Total",
 viewTotal.toLocaleString()+
 " SAR"
 )+
 
-row(
+summaryRow(
 "Extra Bed",
 selectedExtra
 ?
@@ -1576,36 +1278,45 @@ selectedExtra
 "No"
 )+
 
-row(
-"Extra Bed Price",
-extraTotal.toLocaleString()+
-" SAR"
+summaryRow(
+"Extra Beds",
+extraQuantity
 )+
 
-row(
+summaryRow(
 "Children",
 document
 .getElementById("children")
 .value
 )+
 
-row(
+summaryRow(
 "Adults",
-adults
+document
+.getElementById("adults")
+.value
 )+
 
-row(
+summaryRow(
+"Extra Bed Total",
+extraTotal.toLocaleString()+
+" SAR"
+)+
+
+summaryRow(
 "Transfer",
-route||"No Transfer"
+route||
+"No Transfer"
 )+
 
-row(
+summaryRow(
 "Vehicle",
-vehicle||"-"
+vehicle||
+"-"
 )+
 
-row(
-"Transfer Price",
+summaryRow(
+"Transfer Total",
 transferTotal.toLocaleString()+
 " SAR"
 );
@@ -1613,49 +1324,38 @@ transferTotal.toLocaleString()+
 }
 
 
-/* =========================================
-   SUMMARY ROW
-========================================= */
+/* SUMMARY */
 
-function row(
+function summaryRow(
 name,
 value
 ){
 
 return `
 <div class="summaryRow">
-
-<span>
-${escapeHTML(name)}
-</span>
-
-<span>
-${escapeHTML(value)}
-</span>
-
+<span>${name}</span>
+<strong>${value}</strong>
 </div>
 `;
 
 }
 
 
-/* =========================================
-   INPUT EVENTS
-========================================= */
+/* INPUT LISTENERS */
 
 document
 .querySelectorAll(
 "input,select"
 )
 .forEach(
-element=>{
+x=>{
 
-element.addEventListener(
+x.addEventListener(
 "input",
 calculate
 );
 
-element.addEventListener(
+x.addEventListener(
 "change",
 calculate
 );
@@ -1664,9 +1364,7 @@ calculate
 );
 
 
-/* =========================================
-   SEND BOOKING
-========================================= */
+/* SEND BOOKING */
 
 async function sendBooking(){
 
@@ -1721,22 +1419,6 @@ alert(
 return;
 
 }
-
-
-const adults=
-Number(
-document
-.getElementById("adults")
-.value
-)||1;
-
-
-const children=
-Number(
-document
-.getElementById("children")
-.value
-)||0;
 
 
 const booking={
@@ -1804,13 +1486,30 @@ roomType:
 selectedRoom?.name||
 "",
 
-roomPrice:
-Number(
-selectedRoom?.price
-)||0,
-
 occupancy:
 getOccupancy(),
+
+roomPrice:
+Number(
+selectedRoom?.[getOccupancy()]
+)||
+Number(
+DATA.hotels
+?.[
+document
+.getElementById("destination")
+.value
+]
+?.[
+document
+.getElementById("hotel")
+.value
+]
+?.[
+getOccupancy()
+]
+)||
+0,
 
 view:
 selectedView?.name||
@@ -1818,22 +1517,41 @@ selectedView?.name||
 
 viewPrice:
 Number(
-selectedView?.price
-)||0,
+selectedView?.price||0
+),
 
 extraBed:
 Boolean(selectedExtra),
 
 extraBedPrice:
 Number(
-selectedExtra?.price
-)||0,
+selectedExtra?.price||0
+),
+
+extraBedQuantity:
+selectedExtra
+?
+Number(
+document
+.getElementById("extraQuantity")
+.value
+)||1
+:
+0,
 
 children:
-children,
+Number(
+document
+.getElementById("children")
+.value
+)||0,
 
 adults:
-adults,
+Number(
+document
+.getElementById("adults")
+.value
+)||1,
 
 meal:
 document
@@ -1856,17 +1574,13 @@ document
 
 requests:
 document
-.getElementById(
-"requests"
-)
+.getElementById("requests")
 .value
 .trim(),
 
 total:
 document
-.getElementById(
-"total"
-)
+.getElementById("total")
 .innerText
 
 };
@@ -1874,33 +1588,21 @@ document
 
 const button=
 document
-.getElementById(
-"bookButton"
-);
+.getElementById("bookButton");
 
 const success=
 document
-.getElementById(
-"success"
-);
+.getElementById("success");
 
-const errorBox=
+const error=
 document
-.getElementById(
-"error"
-);
+.getElementById("error");
 
 
 button.disabled=true;
 
 button.innerText=
 "Sending...";
-
-success.style.display=
-"none";
-
-errorBox.style.display=
-"none";
 
 
 try{
@@ -1910,9 +1612,7 @@ await api(
 {
 method:"POST",
 body:
-JSON.stringify(
-booking
-)
+JSON.stringify(booking)
 }
 );
 
@@ -1920,24 +1620,26 @@ booking
 success.style.display=
 "block";
 
+error.style.display=
+"none";
+
 button.innerText=
 "BOOKING SENT ✓";
 
 
-}catch(error){
+}catch(e){
 
-console.error(error);
+console.error(e);
 
-errorBox.style.display=
+success.style.display=
+"none";
+
+error.style.display=
 "block";
 
 button.innerText=
 "BOOK NOW";
 
-button.disabled=false;
-
-return;
-
 }
 
 
@@ -1946,27 +1648,7 @@ button.disabled=false;
 }
 
 
-/* =========================================
-   ESCAPE HTML
-========================================= */
-
-function escapeHTML(value){
-
-return String(
-value??""
-)
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================
-   START
-========================================= */
+/* START */
 
 loadData();
 
