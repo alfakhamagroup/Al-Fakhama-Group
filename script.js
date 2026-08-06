@@ -118,3 +118,94 @@ mealPlan.addEventListener("change", updateSummary);
 needTransfer.addEventListener("change", updateSummary);
 
 updateSummary();
+// ============================
+// HOTEL IMAGES
+// ============================
+
+const hotelImages = {
+  "Anjum Hotel": "assets/hotels/anjum.jpg",
+  "Swissotel Al Maqam": "assets/hotels/swissotel.jpg",
+  "Rotana Al Manakha": "assets/hotels/rotana.jpg",
+  "Valy Hotel": "assets/hotels/valy.jpg",
+  "Maien Taiba": "assets/hotels/maien.jpg"
+};
+
+const hotelImage = document.getElementById("hotelImage");
+
+hotel.addEventListener("change", () => {
+
+  if (hotelImages[hotel.value]) {
+
+    hotelImage.src = hotelImages[hotel.value];
+
+  }
+
+});
+
+// ============================
+// EXTRA PRICES
+// ============================
+
+const transferPrice = 250;
+
+const extraBedPrice = 100;
+
+const hbPrice = 50;
+
+// ============================
+// NEW TOTAL
+// ============================
+
+function calculateTotal(){
+
+let hotelCost =
+(hotelPrices[hotel.value] || 0) *
+Number(nights.value || 0) *
+Number(rooms.value || 1);
+
+let extra =
+
+Number(document.getElementById("extraBed").value) *
+extraBedPrice *
+Number(nights.value || 0);
+
+let meal = 0;
+
+if(mealPlan.value==="HB"){
+
+meal =
+hbPrice *
+Number(adults.value) *
+Number(nights.value || 0);
+
+}
+
+let transfer =
+
+needTransfer.value==="yes"
+? transferPrice
+:0;
+
+let total =
+hotelCost +
+extra +
+meal +
+transfer;
+
+grandTotal.textContent =
+total.toLocaleString() + " SAR";
+
+}
+
+// ============================
+// UPDATE SUMMARY
+// ============================
+
+document
+.getElementById("extraBed")
+.addEventListener(
+"change",
+updateSummary
+);
+
+updateSummary();
