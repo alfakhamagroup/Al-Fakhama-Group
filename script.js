@@ -140,13 +140,18 @@ updateSummary();
 // HOTEL IMAGES
 // ============================
 
-const hotelImages = {
-  "Anjum Hotel": "assets/hotels/anjum.jpg",
-  "Swissotel Al Maqam": "assets/hotels/swissotel.jpg",
-  "Rotana Al Manakha": "assets/hotels/rotana.jpg",
-  "Valy Hotel": "assets/hotels/valy.jpg",
-  "Maien Taiba": "assets/hotels/maien.jpg"
-};
+hotel.addEventListener("change", () => {
+
+  const selected =
+    hotel.options[hotel.selectedIndex];
+
+  if (selected.dataset.image) {
+    hotelImage.src = selected.dataset.image;
+  }
+
+  updateSummary();
+
+});
 
 const hotelImage = document.getElementById("hotelImage");
 
