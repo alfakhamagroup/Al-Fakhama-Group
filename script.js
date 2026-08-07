@@ -30,18 +30,36 @@ const summaryMeal = document.getElementById("summaryMeal");
 const summaryTransfer = document.getElementById("summaryTransfer");
 const grandTotal = document.getElementById("grandTotal");
 
-// Hotel list
-[
-  "Anjum Hotel",
-  "Swissotel Al Maqam",
-  "Rotana Al Manakha",
-  "Valy Hotel",
-  "Maien Taiba"
-].forEach(name => {
-  const option = document.createElement("option");
-  option.textContent = name;
-  hotel.appendChild(option);
-});
+const API =
+"https://alfakhama-travel-booking.alfakhama-travel-uzb.workers.dev";
+
+async function loadHotels() {
+
+  hotel.innerHTML =
+    '<option value="">Select Hotel</option>';
+
+  const res =
+    await fetch(API + "/api/hotels");
+
+  const hotels =
+    await res.json();
+
+  hotels.forEach(item => {
+
+    const option =
+      document.createElement("option");
+
+    option.value = item.id;
+    option.textContent = item.name;
+    option.dataset.image = item.image_url;
+
+    hotel.appendChild(option);
+
+  });
+
+}
+
+loadHotels();
 
 // Calculate nights
 function calculateNights() {
